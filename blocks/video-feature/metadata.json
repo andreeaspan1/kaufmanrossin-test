@@ -1,0 +1,37 @@
+{
+  "variantName": "video-feature",
+  "baseBlock": "video",
+  "version": "1.0.0",
+  "created": "2026-06-12T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://kaufmanrossin.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "poster image + video link, click-to-play overlay",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "single featured video with a poster image and play button",
+      "brand/marketing video embeds (YouTube, Vimeo, or hosted)"
+    ],
+    "notSuitableFor": [
+      "multiple videos in a gallery (use carousel)",
+      "background autoplay-only contexts without a poster"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T00:00:00.000Z"
+  }
+}

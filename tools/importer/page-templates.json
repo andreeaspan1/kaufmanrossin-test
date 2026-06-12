@@ -1,0 +1,12 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://kaufmanrossin.com/"
+      ],
+      "description": "Kaufman Rossin homepage - landing page with hero, service/section highlights, navigation header and footer",
+      "blocks": []
+    }
+  ]
+}

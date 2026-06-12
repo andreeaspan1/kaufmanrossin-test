@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-award",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-12T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://kaufmanrossin.com/",
+    "originPage": "homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "feature",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "short text label per item (awards/recognitions)",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "horizontal strips of short text items (awards, recognitions, stats)",
+      "borderless, centered text-only card rows on a colored band"
+    ],
+    "notSuitableFor": [
+      "cards that contain images",
+      "cards with long descriptions or CTAs"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T00:00:00.000Z"
+  }
+}

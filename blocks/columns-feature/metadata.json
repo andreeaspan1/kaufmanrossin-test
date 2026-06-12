@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-feature",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-06-12T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://kaufmanrossin.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "two columns: text (eyebrow + heading + paragraph + CTAs) and image, side by side",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "side-by-side text and image feature sections",
+      "alternating image-left / image-right content blocks",
+      "about/services explanatory sections"
+    ],
+    "notSuitableFor": [
+      "single-column content",
+      "repeating uniform card grids (use cards variants)"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T00:00:00.000Z"
+  }
+}

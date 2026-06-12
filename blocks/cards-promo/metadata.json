@@ -1,0 +1,38 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-12T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://kaufmanrossin.com/",
+    "originPage": "homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "feature",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image + heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "promotional card rows with image, heading, text and CTA",
+      "feature highlights",
+      "location/firm-family card grids with images"
+    ],
+    "notSuitableFor": [
+      "text-only card grids (use cards-award or cards no-images variant)",
+      "tabular data"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-12T00:00:00.000Z"
+  }
+}

@@ -1,20 +1,157 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #003b6a;
+  color: #fff;
+  font-family: museo-sans, Calibri, Georgia, Verdana, sans-serif;
+}
+
+footer .footer {
+  padding: 45px 15px 30px;
 }
 
 footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  margin: 0 auto;
+  max-width: 1140px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Top band */
+footer .footer-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+footer .footer-logo img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+footer .footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+footer .footer-column {
+  flex: 1 1 200px;
+}
+
+footer .footer-column h3 {
+  font-family: museo-slab, Calibri, Georgia, Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+footer .footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer-column li {
+  margin: 0;
+}
+
+footer .footer-column ul a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+}
+
+footer .footer-column ul a:hover {
+  text-decoration: underline;
+}
+
+/* Subscribe button */
+footer .footer-column p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  margin-bottom: 12px;
+}
+
+footer .footer-column p:last-child a {
+  display: inline-block;
+  background-color: #fff;
+  color: #3c3c3c;
+  border: 1px solid #bdbdbd;
+  border-left: 4px solid #aed136;
+  padding: 10px 30px;
+  font-weight: 400;
+}
+
+footer .footer-column p:last-child a:hover {
+  text-decoration: none;
+  background-color: #aed136;
+  color: #003b6a;
+}
+
+/* Social icons */
+footer .footer-social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 40px 0 0;
+  padding: 0;
+}
+
+footer .footer-social li {
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  background-color: #aed136;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-social a:hover {
+  opacity: 0.85;
+}
+
+footer .footer-social img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Legal band */
+footer .footer-legal {
+  margin-top: 30px;
+}
+
+footer .footer-legal p {
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-legal a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-columns {
+    flex-wrap: nowrap;
   }
 }
