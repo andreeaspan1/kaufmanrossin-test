@@ -1,4 +1,7 @@
 {
+  "metadata": {
+    "projectType": "da"
+  },
   "templates": [
     {
       "name": "homepage",
@@ -6,7 +9,32 @@
         "https://kaufmanrossin.com/"
       ],
       "description": "Kaufman Rossin homepage - landing page with hero, service/section highlights, navigation header and footer",
-      "blocks": []
+      "blocks": [
+        {
+          "name": "hero-overlay",
+          "instances": [".sbc-hero-homepage-kr"]
+        },
+        {
+          "name": "cards-award",
+          "instances": [".sbc-hero-homepage-kr__credentials"]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [".sbc-kr-family-cards", ".sbc-locations-grid-kr"]
+        },
+        {
+          "name": "accordion-industries",
+          "instances": [".sbc-industries-accordion-kr"]
+        },
+        {
+          "name": "video-feature",
+          "instances": [".sbc-video-banner-kr"]
+        },
+        {
+          "name": "columns-feature",
+          "instances": ["section.sbc-half-image-copy-kr"]
+        }
+      ]
     }
   ]
 }

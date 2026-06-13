@@ -23,13 +23,16 @@ function decorateTopBand(section) {
   section.querySelectorAll('h3').forEach((heading) => {
     const column = document.createElement('div');
     column.className = 'footer-column';
-    column.append(heading);
+    // Capture the following siblings BEFORE moving the heading — appending the
+    // heading to the column first would detach it and lose its sibling chain.
+    const members = [];
     let next = heading.nextElementSibling;
     while (next && next.tagName !== 'H3' && next !== socialList) {
-      const following = next.nextElementSibling;
-      column.append(next);
-      next = following;
+      members.push(next);
+      next = next.nextElementSibling;
     }
+    column.append(heading);
+    members.forEach((member) => column.append(member));
     columns.append(column);
   });
 

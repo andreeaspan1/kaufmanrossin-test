@@ -5,8 +5,23 @@
 
 .hero-overlay {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 80px 24px;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Navy gradient wash over the photo, matching the source hero. */
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    rgb(29 76 126 / 50%) 0%,
+    rgb(29 76 126 / 90%) 100%
+  );
 }
 
 .hero-overlay h1,
@@ -28,7 +43,7 @@
 
 .hero-overlay picture {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
@@ -40,8 +55,50 @@
   height: 100%;
 }
 
+/* Hero CTA buttons — match the source btn-kr left-to-right fill wipe. */
+.hero-overlay p:last-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* The wipe is an inset gradient layer that grows from an 8px stripe on the
+   left to the full width on hover (matches the source btn-kr ::before, 8px ->
+   100% over 0.3s). Using background-size keeps the label text above the wipe
+   without needing to wrap the text node. */
+.hero-overlay p:last-of-type a {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 8px 100%;
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+.hero-overlay p:last-of-type a:hover {
+  background-size: 100% 100%;
+}
+
+/* First CTA: green button, white wipe. */
+.hero-overlay p:last-of-type a:first-child {
+  background-color: #aed136;
+  background-image: linear-gradient(#fff, #fff);
+  color: #1d4c7e;
+}
+
+/* Second CTA: white button, green wipe. */
+.hero-overlay p:last-of-type a:last-child {
+  background-color: #fff;
+  background-image: linear-gradient(#aed136, #aed136);
+  color: #3c3c3c;
+}
+
 @media (width >= 900px) {
   .hero-overlay {
-    padding: 40px 32px;
+    padding: 80px 32px;
   }
 }

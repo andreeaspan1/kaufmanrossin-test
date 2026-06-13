@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://kaufmanrossin.com/",
+  "path": "index",
+  "timestamp": "2026-06-13T09:33:29.104Z",
+  "title": "Kaufman Rossin | CPA Firm I Tax, Audit, Advisory Services",
+  "template": "homepage",
+  "blocks": [
+    "cards-award",
+    "hero-overlay",
+    "cards-promo",
+    "cards-promo",
+    "cards-promo",
+    "accordion-industries",
+    "video-feature",
+    "columns-feature",
+    "columns-feature"
+  ]
+}
