@@ -149,14 +149,15 @@ footer .footer-social img {
   height: 20px;
 }
 
-/* Legal band */
+/* Legal band — indented and slightly larger per design preference. */
 footer .footer-legal {
   margin-top: 30px;
+  padding-left: 40px;
 }
 
 footer .footer-legal p {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 22px;
   margin-bottom: 12px;
 }
 
