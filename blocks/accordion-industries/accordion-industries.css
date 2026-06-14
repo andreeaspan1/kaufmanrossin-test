@@ -17,12 +17,15 @@
   border-top: 1px solid #dadada;
 }
 
-/* Right image panel — fixed area; images stack here, only active shows. */
+/* Right image panel — fixed landscape area; images stack here, only active
+   shows. Sized to a landscape rectangle (~1.83:1) like the source, not full
+   column height. */
 .accordion-industries-panel {
   position: relative;
   flex: 1 1 55%;
-  align-self: stretch;
-  min-height: 360px;
+  aspect-ratio: 605 / 330;
+  align-self: start;
+  margin-top: 16px;
 }
 
 .accordion-industries-image {
@@ -120,6 +123,5 @@
 
   .accordion-industries-panel {
     width: 100%;
-    min-height: 240px;
   }
 }
