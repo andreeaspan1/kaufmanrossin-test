@@ -2,9 +2,9 @@
   list-style: none;
   margin: 40px auto 0;
   padding: 0;
-  max-width: 960px;
+  max-width: 1100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
   gap: 24px;
   justify-content: center;
 }
@@ -61,7 +61,7 @@
 
 /* Description + CTA wrapper — hidden below the fold, slides up as one unit. */
 .cards-promo .cards-promo-card-reveal {
-  background-color: rgb(0 59 106 / 92%);
+  background-color: rgb(0 0 0 / 75%);
   color: #fff;
   padding: 20px 25px 25px;
   transform: translateY(100%);
