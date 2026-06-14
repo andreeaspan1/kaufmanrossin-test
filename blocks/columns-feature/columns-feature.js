@@ -15,4 +15,14 @@ export default function decorate(block) {
       }
     });
   });
+
+  // Style standalone CTA links as buttons with the source's green-wipe effect.
+  // First button = navy (primary), any subsequent buttons = white (secondary).
+  const ctas = [...block.querySelectorAll('p > a')].filter(
+    (a) => a.parentElement.textContent.trim() === a.textContent.trim(),
+  );
+  ctas.forEach((a, i) => {
+    a.classList.add('columns-feature-btn');
+    a.classList.add(i === 0 ? 'columns-feature-btn-navy' : 'columns-feature-btn-white');
+  });
 }

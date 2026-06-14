@@ -1,3 +1,7 @@
+.columns-feature {
+  margin-top: 60px;
+}
+
 .columns-feature > div {
   display: flex;
   flex-direction: column;
@@ -17,6 +21,45 @@
 
 .columns-feature > div > .columns-feature-img-col img {
   display: block;
+}
+
+/* CTA buttons — match the source btn-kr green left-to-right wipe. The wipe is
+   an inset gradient that grows from an 8px stripe to full width on hover,
+   keeping the label above it. */
+.columns-feature .columns-feature-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 30px;
+  border: 1px solid #bdbdbd;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 8px 100%;
+  background-image: linear-gradient(#aed136, #aed136);
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+.columns-feature .columns-feature-btn:hover {
+  background-size: 100% 100%;
+}
+
+/* Navy primary button. */
+.columns-feature .columns-feature-btn-navy {
+  background-color: #1d4c7e;
+  color: #fff;
+}
+
+.columns-feature .columns-feature-btn-navy:hover {
+  color: #1d4c7e;
+}
+
+/* White secondary button. */
+.columns-feature .columns-feature-btn-white {
+  background-color: #fff;
+  color: #3c3c3c;
 }
 
 @media (width >= 900px) {
