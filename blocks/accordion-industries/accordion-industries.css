@@ -57,18 +57,35 @@
   transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
 }
 
+/* Active body: revealed, two-column (text left, image right). */
 .accordion-industries .is-active .accordion-industries-item-body {
   max-height: 600px;
   padding: 0 0 24px;
   opacity: 1;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.accordion-industries .accordion-industries-item-text {
+  flex: 1 1 45%;
+}
+
+.accordion-industries .accordion-industries-item-image {
+  flex: 1 1 55%;
 }
 
 .accordion-industries .accordion-industries-item-body p {
   margin: 0 0 12px;
 }
 
+.accordion-industries .accordion-industries-item-image p {
+  margin: 0;
+  line-height: 0;
+}
+
 .accordion-industries .accordion-industries-item-body img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 

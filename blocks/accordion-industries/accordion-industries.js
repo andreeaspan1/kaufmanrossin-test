@@ -29,6 +29,20 @@ export default function decorate(block) {
 
     body.className = 'accordion-industries-item-body';
 
+    // Split the body into a text column (description + CTA) and an image
+    // column so the image sits to the right of the text (matches the source).
+    const textCol = document.createElement('div');
+    textCol.className = 'accordion-industries-item-text';
+    const imageCol = document.createElement('div');
+    imageCol.className = 'accordion-industries-item-image';
+
+    [...body.children].forEach((child) => {
+      if (child.querySelector('picture, img')) imageCol.append(child);
+      else textCol.append(child);
+    });
+    body.textContent = '';
+    body.append(textCol, imageCol);
+
     item.append(header, body);
     if (i === 0) item.classList.add('is-active');
     row.replaceWith(item);
