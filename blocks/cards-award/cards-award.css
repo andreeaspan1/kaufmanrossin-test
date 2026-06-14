@@ -1,28 +1,51 @@
-.cards-award > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 16px;
-  text-align: center;
+/* Recognition strip — navy band matching the source hero credentials row. */
+.cards-award {
+  background-color: #013b6a;
+  padding: 20px 24px;
 }
 
+.cards-award > ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1140px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 32px;
+}
+
+/* Award items: white text. */
 .cards-award > ul > li {
   border: none;
   background-color: transparent;
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
 }
 
 .cards-award .cards-award-card-body {
-  margin: 8px 16px;
+  margin: 0;
 }
 
-.cards-award .cards-award-card-image {
-  line-height: 0;
+/* "RECOGNIZED FOR EXCELLENCE" label (first item, holds a <strong>):
+   green, small, bold, uppercase. */
+.cards-award > ul > li:first-child {
+  color: #aed135;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.cards-award > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-award > ul > li:first-child strong {
+  font-weight: 700;
+}
+
+@media (width >= 900px) {
+  .cards-award > ul {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
 }

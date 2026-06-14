@@ -35,6 +35,18 @@
   margin-left: auto;
   margin-right: auto;
   color: var(--background-color);
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+@media (width >= 900px) {
+  .hero-overlay h1 {
+    font-size: 4.5rem;
+  }
 }
 
 .hero-overlay.no-image * {
@@ -60,6 +72,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 /* The wipe is an inset gradient layer that grows from an 8px stripe on the
