@@ -27,16 +27,18 @@ footer .footer-top {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 footer .footer-brand {
   flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 footer .footer-logo {
   text-align: left;
-  margin: 0 0 40px;
+  margin: 0;
 }
 
 footer .footer-logo img {
@@ -111,13 +113,14 @@ footer .footer-column p:last-child a:hover {
   color: #003b6a;
 }
 
-/* Social icons — left-aligned under the logo. */
+/* Social icons — left-aligned, pushed to the bottom of the brand block
+   (aligns roughly with the bottom of the link columns, matching the source). */
 footer .footer-social {
   list-style: none;
   display: flex;
   justify-content: flex-start;
   gap: 16px;
-  margin: 0;
+  margin: auto 0 0;
   padding: 0;
 }
 
