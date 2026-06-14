@@ -1,23 +1,48 @@
 /*
- * Accordion Block
- * Recreate an accordion
- * https://www.hlx.live/developer/block-collection/accordion
+ * Accordion (Featured Industries) — single-open behavior matching the source:
+ * exactly one item is open at a time; clicking a closed item opens it and
+ * closes the others; clicking the already-open item keeps it open.
  */
 
 export default function decorate(block) {
-  [...block.children].forEach((row) => {
-    // decorate accordion item label
+  // Section title shown above the accordion (matches the source layout).
+  const title = document.createElement('h2');
+  title.className = 'accordion-industries-title';
+  title.id = 'featured-industries';
+  title.textContent = 'Featured Industries';
+  block.parentElement.insertBefore(title, block);
+
+  const items = [];
+
+  [...block.children].forEach((row, i) => {
     const label = row.children[0];
-    const summary = document.createElement('summary');
-    summary.className = 'accordion-industries-item-label';
-    summary.append(...label.childNodes);
-    // decorate accordion item body
     const body = row.children[1];
+
+    const item = document.createElement('div');
+    item.className = 'accordion-industries-item';
+
+    const header = document.createElement('button');
+    header.type = 'button';
+    header.className = 'accordion-industries-item-label';
+    header.setAttribute('aria-expanded', i === 0 ? 'true' : 'false');
+    header.append(...label.childNodes);
+
     body.className = 'accordion-industries-item-body';
-    // decorate accordion item
-    const details = document.createElement('details');
-    details.className = 'accordion-industries-item';
-    details.append(summary, body);
-    row.replaceWith(details);
+
+    item.append(header, body);
+    if (i === 0) item.classList.add('is-active');
+    row.replaceWith(item);
+    items.push({ item, header });
+  });
+
+  items.forEach(({ item, header }) => {
+    header.addEventListener('click', () => {
+      if (item.classList.contains('is-active')) return; // active item stays open
+      items.forEach((other) => {
+        const open = other.item === item;
+        other.item.classList.toggle('is-active', open);
+        other.header.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
   });
 }
