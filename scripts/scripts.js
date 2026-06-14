@@ -49,6 +49,26 @@ function buildWidgetAutoBlocks(main) {
 }
 
 /**
+ * Wraps a loose testimonial (a heading directly followed by an attribution
+ * paragraph that starts with a <strong>) into a navy quote block.
+ * @param {Element} main The container element
+ */
+function buildQuoteAutoBlocks(main) {
+  [...main.querySelectorAll('h1, h2, h3')].forEach((heading) => {
+    if (heading.closest('[class]:not(.section)')) return;
+    const attribution = heading.nextElementSibling;
+    if (!attribution || attribution.tagName !== 'P') return;
+    const lead = attribution.firstElementChild;
+    if (!lead || lead.tagName !== 'STRONG') return;
+    if (attribution.querySelector('a, img, picture')) return;
+
+    const block = buildBlock('quote', { elems: [heading.cloneNode(true), attribution.cloneNode(true)] });
+    heading.replaceWith(block);
+    attribution.remove();
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -72,6 +92,7 @@ function buildAutoBlocks(main) {
       });
     }
     buildWidgetAutoBlocks(main);
+    buildQuoteAutoBlocks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

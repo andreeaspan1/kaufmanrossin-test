@@ -25,4 +25,15 @@ export default function decorate(block) {
   });
   ul.querySelectorAll('picture > img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.replaceChildren(ul);
+
+  // The firm-family instance (Wealth Solutions / Fund Administration) carries a
+  // centered "Get to Know Your Firm Family" heading above the cards in the
+  // source. Inject it for that instance only.
+  const headings = [...ul.querySelectorAll('h3')].map((h) => h.textContent.trim());
+  if (headings.includes('Wealth Solutions') && headings.includes('Fund Administration')) {
+    const title = document.createElement('h2');
+    title.className = 'cards-promo-title';
+    title.textContent = 'Get to Know Your Firm Family';
+    block.parentElement.insertBefore(title, block);
+  }
 }
