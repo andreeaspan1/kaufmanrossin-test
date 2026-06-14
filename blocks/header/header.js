@@ -55,6 +55,15 @@ export default async function decorate(block) {
   if (brand) brand.classList.add('nav-brand');
   if (sections) sections.classList.add('nav-sections');
 
+  // The fragment loader wraps loose content in a .default-content-wrapper.
+  // Unwrap it so the nav <ul> is a direct child of .nav-sections, which the
+  // CSS dropdown rules and the selectors below depend on.
+  if (sections) {
+    sections.querySelectorAll(':scope > .default-content-wrapper').forEach((wrapper) => {
+      wrapper.replaceWith(...wrapper.childNodes);
+    });
+  }
+
   // Decorate the main menu groups (top-level <li> that contain a nested <ul>).
   const navList = sections ? sections.querySelector(':scope > ul') : null;
   if (navList) {
