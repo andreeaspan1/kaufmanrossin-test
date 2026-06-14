@@ -1,16 +1,17 @@
 .cards-promo > ul {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
+  justify-content: center;
 }
 
-/* Each card is a fixed-height tile; image fills it, text overlays. */
+/* Each card is a perfect square; image fills it, text overlays. */
 .cards-promo > ul > li {
   position: relative;
-  height: 480px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: 0;
   background-color: #003b6a;
