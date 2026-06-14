@@ -1,16 +1,27 @@
 /*
- * Accordion (Featured Industries) — single-open behavior matching the source:
- * exactly one item is open at a time; clicking a closed item opens it and
- * closes the others; clicking the already-open item keeps it open.
+ * Accordion (Featured Industries) — matches the source:
+ * - Left column: accordion list of industries (title + collapsible description/CTA).
+ * - Right panel: a FIXED image area holding every item's image stacked in the
+ *   same place; only the active item's image is shown. Clicking an item opens
+ *   its text and swaps the visible image without the image moving.
+ * - Single-open: exactly one item open; the active item stays open on re-click.
  */
 
 export default function decorate(block) {
-  // Section title shown above the accordion (matches the source layout).
+  // Section title shown above the accordion.
   const title = document.createElement('h2');
   title.className = 'accordion-industries-title';
   title.id = 'featured-industries';
   title.textContent = 'Featured Industries';
   block.parentElement.insertBefore(title, block);
+
+  // Build the two columns: list (left) + shared image panel (right).
+  const layout = document.createElement('div');
+  layout.className = 'accordion-industries-layout';
+  const list = document.createElement('div');
+  list.className = 'accordion-industries-list';
+  const panel = document.createElement('div');
+  panel.className = 'accordion-industries-panel';
 
   const items = [];
 
@@ -18,6 +29,21 @@ export default function decorate(block) {
     const label = row.children[0];
     const body = row.children[1];
 
+    // Pull the image out of the body into the shared right panel.
+    const imageHolder = document.createElement('div');
+    imageHolder.className = 'accordion-industries-image';
+    const imgEl = body.querySelector('picture, img');
+    if (imgEl) {
+      const imgWrap = imgEl.closest('p') || imgEl;
+      imageHolder.append(imgEl.closest('picture') || imgEl);
+      if (imgWrap.parentElement && imgWrap.tagName === 'P' && !imgWrap.textContent.trim()) {
+        imgWrap.remove();
+      }
+    }
+    if (i === 0) imageHolder.classList.add('is-active');
+    panel.append(imageHolder);
+
+    // Accordion item (left): header + collapsible text body.
     const item = document.createElement('div');
     item.className = 'accordion-industries-item';
 
@@ -29,25 +55,15 @@ export default function decorate(block) {
 
     body.className = 'accordion-industries-item-body';
 
-    // Split the body into a text column (description + CTA) and an image
-    // column so the image sits to the right of the text (matches the source).
-    const textCol = document.createElement('div');
-    textCol.className = 'accordion-industries-item-text';
-    const imageCol = document.createElement('div');
-    imageCol.className = 'accordion-industries-item-image';
-
-    [...body.children].forEach((child) => {
-      if (child.querySelector('picture, img')) imageCol.append(child);
-      else textCol.append(child);
-    });
-    body.textContent = '';
-    body.append(textCol, imageCol);
-
     item.append(header, body);
     if (i === 0) item.classList.add('is-active');
-    row.replaceWith(item);
-    items.push({ item, header });
+    list.append(item);
+    items.push({ item, header, imageHolder });
   });
+
+  layout.append(list, panel);
+  block.textContent = '';
+  block.append(layout);
 
   items.forEach(({ item, header }) => {
     header.addEventListener('click', () => {
@@ -56,6 +72,7 @@ export default function decorate(block) {
         const open = other.item === item;
         other.item.classList.toggle('is-active', open);
         other.header.setAttribute('aria-expanded', open ? 'true' : 'false');
+        other.imageHolder.classList.toggle('is-active', open);
       });
     });
   });
