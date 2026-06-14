@@ -43,6 +43,13 @@ function decorateTopBand(section) {
   if (logoPara) brand.append(logoPara);
   if (socialList) brand.append(socialList);
 
+  // Remove any now-empty wrappers (e.g. the loadFragment
+  // default-content-wrapper) so the brand block is the first flex child and
+  // aligns flush-left with the legal band below.
+  [...section.children].forEach((child) => {
+    if (!child.textContent.trim() && !child.querySelector('img')) child.remove();
+  });
+
   section.append(brand);
   section.append(columns);
 }
