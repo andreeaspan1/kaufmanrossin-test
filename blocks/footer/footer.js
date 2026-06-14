@@ -67,6 +67,8 @@ export default async function decorate(block) {
   const sections = footer.children;
   if (sections[0]) decorateTopBand(sections[0]);
   if (sections[1]) sections[1].classList.add('footer-legal');
+  // Third section (optional): the floating "Contact Us" edge tab.
+  if (sections[2]) sections[2].classList.add('footer-contact-tab');
 
   block.append(footer);
 }

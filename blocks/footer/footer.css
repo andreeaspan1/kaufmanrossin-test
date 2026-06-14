@@ -150,6 +150,41 @@ footer .footer-legal a {
   text-decoration: underline;
 }
 
+/* Floating "Contact Us" edge tab — fixed to the right side, rotated,
+   matching the source (green bg, navy text). */
+footer .footer-contact-tab {
+  margin: 0;
+}
+
+footer .footer-contact-tab p {
+  margin: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-contact-tab a {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: rotate(-90deg);
+  transform-origin: bottom right;
+  background-color: #aed136;
+  color: #003b6a;
+  padding: 10px 25px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer-contact-tab a:hover {
+  background-color: #9bc12a;
+  text-decoration: none;
+}
+
 @media (width >= 900px) {
   footer .footer-columns {
     flex-wrap: nowrap;
