@@ -36,10 +36,15 @@ function decorateTopBand(section) {
     columns.append(column);
   });
 
-  // Order: logo, columns, social row.
-  if (logoPara) section.append(logoPara);
+  // Layout: a left brand block (logo on top, social below) and the link
+  // columns to its right — matching the source footer.
+  const brand = document.createElement('div');
+  brand.className = 'footer-brand';
+  if (logoPara) brand.append(logoPara);
+  if (socialList) brand.append(socialList);
+
+  section.append(brand);
   section.append(columns);
-  if (socialList) section.append(socialList);
 }
 
 /**

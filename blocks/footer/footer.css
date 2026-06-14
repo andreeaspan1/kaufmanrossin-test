@@ -22,26 +22,39 @@ footer .footer a {
   text-decoration: none;
 }
 
-/* Top band */
+/* Top band: brand block (logo + social) on the left, link columns to the right. */
+footer .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+footer .footer-brand {
+  flex: 0 0 auto;
+}
+
 footer .footer-logo {
-  text-align: center;
-  margin-bottom: 40px;
+  text-align: left;
+  margin: 0 0 40px;
 }
 
 footer .footer-logo img {
-  width: 300px;
+  width: 260px;
   max-width: 100%;
   height: auto;
 }
 
 footer .footer-columns {
+  flex: 1 1 auto;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  justify-content: flex-end;
 }
 
 footer .footer-column {
-  flex: 1 1 200px;
+  flex: 0 1 200px;
 }
 
 footer .footer-column h3 {
@@ -98,13 +111,13 @@ footer .footer-column p:last-child a:hover {
   color: #003b6a;
 }
 
-/* Social icons */
+/* Social icons — left-aligned under the logo. */
 footer .footer-social {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 16px;
-  margin: 40px 0 0;
+  margin: 0;
   padding: 0;
 }
 
