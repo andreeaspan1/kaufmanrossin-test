@@ -20,6 +20,11 @@
   justify-content: center;
 }
 
+/* Firm-family instance (Wealth Solutions / Fund Administration): larger tiles. */
+.cards-promo.cards-promo-family > ul {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+}
+
 /* Each card is a perfect square; image fills it, text overlays. */
 .cards-promo > ul > li {
   position: relative;
@@ -102,4 +107,48 @@
 .cards-promo > ul > li:hover .cards-promo-card-reveal,
 .cards-promo > ul > li:focus-within .cards-promo-card-reveal {
   transform: translateY(0);
+}
+
+/* Locations instance: small square cards in a single centered row, with the
+   place name shown as a visible caption below the image. */
+.cards-promo.cards-promo-locations > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+}
+
+.cards-promo.cards-promo-locations > ul > li {
+  position: static;
+  width: 200px;
+  aspect-ratio: auto;
+  background-color: transparent;
+  text-align: center;
+}
+
+.cards-promo.cards-promo-locations .cards-promo-card-image {
+  position: static;
+  aspect-ratio: 1 / 1;
+}
+
+.cards-promo.cards-promo-locations .cards-promo-card-body {
+  position: static;
+  inset: auto;
+  pointer-events: auto;
+}
+
+/* Show the name caption instead of the hover slide-up reveal. */
+/* stylelint-disable-next-line no-descending-specificity */
+.cards-promo.cards-promo-locations .cards-promo-card-reveal {
+  position: static;
+  transform: none;
+  background-color: transparent;
+  padding: 12px 0 0;
+}
+
+.cards-promo.cards-promo-locations .cards-promo-card-reveal a {
+  color: #003b6a;
+  font-weight: 700;
+  font-size: 18px;
 }
