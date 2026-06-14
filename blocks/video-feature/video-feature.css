@@ -1,71 +1,97 @@
+/* Full-bleed video banner with navy heading box on top + centered play. */
 .video-feature {
-  text-align: center;
-  max-width: 900px;
-  margin: 24px auto;
-}
-
-.video-feature[data-embed-loaded='false']:not(.placeholder) {
-  /* reserve an approximate space to avoid extensive layout shifts */
-  aspect-ratio: 16 / 9;
-}
-
-.video-feature > div {
-  display: flex;
-  justify-content: center;
-}
-
-.video-feature video {
-  max-width: 100%;
-}
-
-.video-feature .video-feature-placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 9;
   position: relative;
+  min-height: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
-.video-feature .video-feature-placeholder > * {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Background image layer. */
+.video-feature .video-feature-bg {
   position: absolute;
   inset: 0;
+  z-index: -1;
 }
 
-.video-feature[data-embed-loaded='true'] .video-feature-placeholder,
-.video-feature[data-embed-loaded='false'] .video-feature-placeholder + * {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-}
-
-.video-feature .video-feature-placeholder picture img {
+.video-feature .video-feature-bg picture,
+.video-feature .video-feature-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.video-feature .video-feature-placeholder-play button {
-  position: relative;
-  display: block;
-  width: 44px;
-  height: 44px;
+/* Navy heading box, near the top, overlapping the image. */
+.video-feature .video-feature-content {
+  background-color: #003b6a;
+  color: #fff;
+  text-align: center;
+  max-width: 640px;
+  margin: 40px 24px 0;
+  padding: 40px 48px;
+}
+
+.video-feature .video-feature-content h2 {
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.video-feature .video-feature-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Circular play button, centered over the lower part of the image. */
+.video-feature .video-feature-play {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  outline: 2px solid;
+  border: 2px solid #fff;
+  background-color: rgb(255 255 255 / 20%);
+  cursor: pointer;
   padding: 0;
 }
 
-.video-feature .video-feature-placeholder-play button::before {
+.video-feature .video-feature-play::before {
   content: '';
-  display: block;
-  box-sizing: border-box;
   position: absolute;
-  width: 0;
-  height: 24px;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  border-left: 18px solid;
   top: 50%;
-  left: calc(50% + 2px);
+  left: calc(50% + 3px);
   transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 18px solid #fff;
+}
+
+.video-feature .video-feature-play:hover {
+  background-color: rgb(255 255 255 / 35%);
+}
+
+/* When playing: the Vimeo iframe fills the banner. */
+.video-feature.is-playing .video-feature-content,
+.video-feature.is-playing .video-feature-play {
+  display: none;
+}
+
+.video-feature .video-feature-embed {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.video-feature .video-feature-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

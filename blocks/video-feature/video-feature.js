@@ -1,145 +1,76 @@
 /*
- * Video Block
- * Show a video referenced by a link
- * https://www.hlx.live/developer/block-collection/video
+ * Video Feature — full-bleed background image with a navy heading box on top
+ * and a centered play button. Clicking play swaps the poster for the embedded
+ * (Vimeo) video, matching the source "Our Independence in Action" banner.
+ *
+ * Content: one row, two cells — [poster image] | [video link]. The link text
+ * is used as the heading; the description is fixed copy for this banner.
  */
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const DESCRIPTION = 'See how our independent model benefits our clients by delivering stability, value and innovation year after year.';
 
-function embedYoutube(url, autoplay, background) {
-  const usp = new URLSearchParams(url.search);
-  let suffix = '';
-  if (background || autoplay) {
-    const suffixParams = {
-      autoplay: autoplay ? '1' : '0',
-      mute: background ? '1' : '0',
-      controls: background ? '0' : '1',
-      disablekb: background ? '1' : '0',
-      loop: background ? '1' : '0',
-      playsinline: background ? '1' : '0',
-    };
-    suffix = `&${Object.entries(suffixParams).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}`;
-  }
-  let vid = usp.get('v') ? encodeURIComponent(usp.get('v')) : '';
-  const embed = url.pathname;
-  if (url.origin.includes('youtu.be')) {
-    [, vid] = url.pathname.split('/');
-  }
-
-  const temp = document.createElement('div');
-  temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
-      <iframe src="https://www.youtube.com${vid ? `/embed/${vid}?rel=0&v=${vid}${suffix}` : embed}" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;"
-      allow="autoplay; fullscreen; picture-in-picture; encrypted-media; accelerometer; gyroscope; picture-in-picture" allowfullscreen="" scrolling="no" title="Content from Youtube" loading="lazy"></iframe>
-    </div>`;
-  return temp.children.item(0);
-}
-
-function embedVimeo(url, autoplay, background) {
-  const [, video] = url.pathname.split('/');
-  let suffix = '';
-  if (background || autoplay) {
-    const suffixParams = {
-      autoplay: autoplay ? '1' : '0',
-      background: background ? '1' : '0',
-    };
-    suffix = `?${Object.entries(suffixParams).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join('&')}`;
-  }
-  const temp = document.createElement('div');
-  temp.innerHTML = `<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
-      <iframe src="https://player.vimeo.com/video/${video}${suffix}"
-      style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;"
+function embedVimeo(videoId, hash) {
+  const params = new URLSearchParams({ autoplay: '1' });
+  if (hash) params.set('h', hash);
+  const wrap = document.createElement('div');
+  wrap.className = 'video-feature-embed';
+  wrap.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoId}?${params}"
       frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-      title="Content from Vimeo" loading="lazy"></iframe>
-    </div>`;
-  return temp.children.item(0);
+      title="Our Independence in Action"></iframe>`;
+  return wrap;
 }
 
-function getVideoElement(source, autoplay, background) {
-  const video = document.createElement('video');
-  video.setAttribute('controls', '');
-  if (autoplay) video.setAttribute('autoplay', '');
-  if (background) {
-    video.setAttribute('loop', '');
-    video.setAttribute('playsinline', '');
-    video.removeAttribute('controls');
-    video.addEventListener('canplay', () => {
-      video.muted = true;
-      if (autoplay) video.play();
-    });
-  }
-
-  const sourceEl = document.createElement('source');
-  sourceEl.setAttribute('src', source);
-  sourceEl.setAttribute('type', `video/${source.split('.').pop()}`);
-  video.append(sourceEl);
-
-  return video;
+function parseVideoLink(href) {
+  try {
+    const url = new URL(href);
+    if (url.hostname.includes('vimeo')) {
+      const id = url.pathname.split('/').filter(Boolean)[0];
+      const hash = url.searchParams.get('h') || '';
+      return { id, hash };
+    }
+  } catch (e) { /* ignore */ }
+  return null;
 }
-
-const loadVideoEmbed = (block, link, autoplay, background) => {
-  if (block.dataset.embedLoaded === 'true') {
-    return;
-  }
-  const url = new URL(link);
-
-  const isYoutube = link.includes('youtube') || link.includes('youtu.be');
-  const isVimeo = link.includes('vimeo');
-
-  if (isYoutube) {
-    const embedWrapper = embedYoutube(url, autoplay, background);
-    block.append(embedWrapper);
-    embedWrapper.querySelector('iframe').addEventListener('load', () => {
-      block.dataset.embedLoaded = true;
-    });
-  } else if (isVimeo) {
-    const embedWrapper = embedVimeo(url, autoplay, background);
-    block.append(embedWrapper);
-    embedWrapper.querySelector('iframe').addEventListener('load', () => {
-      block.dataset.embedLoaded = true;
-    });
-  } else {
-    const videoEl = getVideoElement(link, autoplay, background);
-    block.append(videoEl);
-    videoEl.addEventListener('canplay', () => {
-      block.dataset.embedLoaded = true;
-    });
-  }
-};
 
 export default async function decorate(block) {
-  const placeholder = block.querySelector('picture');
-  const link = block.querySelector('a').href;
+  const picture = block.querySelector('picture, img');
+  const link = block.querySelector('a');
+  const headingText = link ? link.textContent.trim() : 'Our Independence in Action';
+  // Use the authored Vimeo link; fall back to the known banner video so the
+  // play button always works even if the link was transformed by EDS.
+  const video = (link && parseVideoLink(link.getAttribute('href')))
+    || { id: '803236744', hash: 'f1fc4f610f' };
+
   block.textContent = '';
-  block.dataset.embedLoaded = false;
 
-  const autoplay = block.classList.contains('autoplay');
-  if (placeholder) {
-    block.classList.add('placeholder');
-    const wrapper = document.createElement('div');
-    wrapper.className = 'video-feature-placeholder';
-    wrapper.append(placeholder);
+  // Background image layer.
+  const bg = document.createElement('div');
+  bg.className = 'video-feature-bg';
+  if (picture) bg.append(picture.closest('picture') || picture);
 
-    if (!autoplay) {
-      wrapper.insertAdjacentHTML(
-        'beforeend',
-        '<div class="video-feature-placeholder-play"><button type="button" title="Play"></button></div>',
-      );
-      wrapper.addEventListener('click', () => {
-        wrapper.remove();
-        loadVideoEmbed(block, link, true, false);
-      });
-    }
-    block.append(wrapper);
-  }
+  // Navy heading box.
+  const content = document.createElement('div');
+  content.className = 'video-feature-content';
+  const h = document.createElement('h2');
+  h.textContent = headingText;
+  const desc = document.createElement('p');
+  desc.textContent = DESCRIPTION;
+  content.append(h, desc);
 
-  if (!placeholder || autoplay) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((e) => e.isIntersecting)) {
-        observer.disconnect();
-        const playOnLoad = autoplay && !prefersReducedMotion.matches;
-        loadVideoEmbed(block, link, playOnLoad, autoplay);
-      }
+  // Play button.
+  const play = document.createElement('button');
+  play.type = 'button';
+  play.className = 'video-feature-play';
+  play.setAttribute('aria-label', 'Play Video');
+
+  block.append(bg, content, play);
+
+  if (video) {
+    play.addEventListener('click', () => {
+      block.classList.add('is-playing');
+      block.append(embedVimeo(video.id, video.hash));
     });
-    observer.observe(block);
+  } else {
+    play.hidden = true;
   }
 }
