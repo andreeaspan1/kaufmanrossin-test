@@ -307,17 +307,17 @@ header nav .nav-search-icon::after {
     padding: 0 32px;
   }
 
+  /* Logo and menu form one centered group; logo hugs the menu's left. */
   header nav .nav-brand {
     grid-area: brand;
     padding: 16px 0;
-    justify-self: start;
+    justify-self: end;
   }
 
   header nav .nav-hamburger {
     display: none;
   }
 
-  /* Menu occupies the center column and is horizontally centered. */
   header nav .nav-sections {
     grid-area: sections;
     display: flex;
