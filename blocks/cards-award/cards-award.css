@@ -1,7 +1,11 @@
-/* Recognition strip — navy band matching the source hero credentials row. */
+/* Recognition strip — navy band matching the source hero credentials row.
+   Full-bleed: negative margins break it out of the section container so the
+   navy band runs edge to edge. */
 .cards-award {
   background-color: #013b6a;
   padding: 20px 24px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .cards-award > ul {
