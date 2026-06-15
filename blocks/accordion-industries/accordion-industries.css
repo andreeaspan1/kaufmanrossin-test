@@ -107,10 +107,14 @@
 }
 
 /* CTA link styled as the source btn-kr: navy button with a green left-to-right
-   wipe that grows from an 8px stripe to full width on hover. */
-.accordion-industries-item-body a.accordion-industries-btn {
+   wipe that grows from an 8px stripe to full width on hover. Overlaid on the
+   bottom-left of the active image in the right panel. */
+.accordion-industries-image a.accordion-industries-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
   display: inline-block;
-  margin-top: 8px;
   padding: 10px 30px;
   border: 1px solid #bdbdbd;
   color: #fff;
@@ -125,7 +129,7 @@
   transition: background-size 0.3s ease, color 0.3s ease;
 }
 
-.accordion-industries-item-body a.accordion-industries-btn:hover {
+.accordion-industries-image a.accordion-industries-btn:hover {
   background-size: 100% 100%;
   color: #1d4c7e;
   text-decoration: none;

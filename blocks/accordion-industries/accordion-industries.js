@@ -55,11 +55,17 @@ export default function decorate(block) {
 
     body.className = 'accordion-industries-item-body';
 
-    // Style the standalone CTA link as a navy green-wipe button (source btn-kr).
+    // Style the standalone CTA link as a navy green-wipe button (source btn-kr)
+    // and move it onto the bottom of this item's image in the right panel.
     const cta = [...body.querySelectorAll('p > a')].find(
       (a) => a.parentElement.textContent.trim() === a.textContent.trim(),
     );
-    if (cta) cta.classList.add('accordion-industries-btn');
+    if (cta) {
+      cta.classList.add('accordion-industries-btn');
+      const ctaWrap = cta.closest('p');
+      imageHolder.append(cta);
+      if (ctaWrap && !ctaWrap.textContent.trim()) ctaWrap.remove();
+    }
 
     item.append(header, body);
     if (i === 0) item.classList.add('is-active');
