@@ -111,8 +111,8 @@ export default async function decorate(block) {
       <button type="submit" aria-label="Search">
         <span class="nav-search-icon"></span>
       </button>`;
-  // Search is its own nav cell so the menu can center across the full width.
-  nav.append(search);
+  // Search lives in the sections area, stacked above the main menu row.
+  if (sections) sections.append(search);
 
   // Place the hamburger inside the brand bar so logo + toggle share a row.
   if (brand) brand.append(hamburger);
