@@ -1,4 +1,7 @@
+/* Override the boilerplate fixed 64px height so the full 3-row nav (utility +
+   brand + sections) is reserved and does not overflow onto the hero. */
 header {
+  height: auto;
   background-color: #fff;
 }
 
@@ -30,16 +33,25 @@ header nav ul {
   padding: 0;
 }
 
-/* Utility strip */
+/* Utility strip — navy full-bleed bar with white links, matching the source. */
 header nav .nav-utility {
   grid-area: utility;
+  padding: 8px 16px;
+  margin: 0 calc(50% - 50vw);
+  background-color: #003b6a;
+}
+
+/* The authored links arrive as separate <p>s inside a default-content-wrapper;
+   lay them out in a single horizontal, right-aligned row. */
+header nav .nav-utility .default-content-wrapper,
+header nav .nav-utility > div {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
   justify-content: flex-end;
   align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header nav .nav-utility p {
@@ -49,6 +61,7 @@ header nav .nav-utility p {
 header nav .nav-utility a {
   font-size: 13px;
   font-weight: 500;
+  color: #fff;
 }
 
 header nav .nav-utility a:hover {
