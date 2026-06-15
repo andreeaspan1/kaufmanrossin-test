@@ -64,14 +64,34 @@ header nav .nav-utility ul {
   padding: 0;
 }
 
+/* Pull the left group flush to the edge (compensate the active button's
+   left padding so "CPAs and Advisors" aligns with the margin). */
+header nav .nav-utility ul:first-child {
+  margin-left: -10px;
+}
+
 header nav .nav-utility a {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: #fff;
 }
 
 header nav .nav-utility a:hover {
   text-decoration: underline;
+}
+
+/* Right group (quick links): thin vertical divider between each item. */
+header nav .nav-utility ul:nth-child(2) {
+  gap: 0;
+}
+
+header nav .nav-utility ul:nth-child(2) li {
+  padding: 0 14px;
+  border-left: 1px solid rgb(255 255 255 / 35%);
+}
+
+header nav .nav-utility ul:nth-child(2) li:first-child {
+  border-left: 0;
 }
 
 /* Left group (lines of business): green-wipe buttons. Default is white text on
@@ -163,6 +183,7 @@ header nav[aria-expanded='true'] .nav-sections {
   padding-bottom: 12px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-sections > ul > li {
   border-top: 1px solid #f0f0f0;
   position: relative;
@@ -204,6 +225,7 @@ header nav .nav-drop[aria-expanded='true'] .nav-drop-toggle::after {
   transform: rotate(-135deg);
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-sections > ul > li > ul {
   display: none;
   padding: 0 0 8px 12px;
@@ -256,9 +278,9 @@ header nav .nav-search button {
 
 header nav .nav-search-icon {
   display: block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #003b6a;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid #003b6a;
   border-radius: 50%;
   position: relative;
 }
@@ -266,10 +288,10 @@ header nav .nav-search-icon {
 header nav .nav-search-icon::after {
   content: '';
   position: absolute;
-  right: -5px;
-  bottom: -4px;
-  width: 8px;
-  height: 2px;
+  right: -4px;
+  bottom: -3px;
+  width: 6px;
+  height: 1.5px;
   background: #003b6a;
   transform: rotate(45deg);
 }
@@ -296,20 +318,23 @@ header nav .nav-search-icon::after {
   header nav .nav-sections {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch;
     gap: 12px;
-    justify-self: end;
+    justify-self: stretch;
   }
 
+  /* Menu items centered in the row. */
   header nav .nav-sections > ul {
     display: flex;
     gap: 24px;
     align-items: center;
+    justify-content: center;
   }
 
   /* Search sits at the top-right, above the main menu row. */
   header nav .nav-search {
     order: -1;
+    align-self: flex-end;
     margin-top: 0;
     width: 160px;
   }
