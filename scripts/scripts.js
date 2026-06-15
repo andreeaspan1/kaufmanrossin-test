@@ -69,6 +69,31 @@ function buildQuoteAutoBlocks(main) {
 }
 
 /**
+ * Wraps a loose closing call-to-action (a heading, a supporting paragraph, and
+ * a paragraph holding a single standalone link) into a centered CTA block.
+ * @param {Element} main The container element
+ */
+function buildCtaAutoBlocks(main) {
+  [...main.querySelectorAll('h2')].forEach((heading) => {
+    if (heading.closest('[class]:not(.section)')) return;
+    const para = heading.nextElementSibling;
+    if (!para || para.tagName !== 'P' || para.querySelector('a')) return;
+    const linkPara = para.nextElementSibling;
+    if (!linkPara || linkPara.tagName !== 'P') return;
+    const link = linkPara.querySelector('a');
+    if (!link || linkPara.querySelectorAll('a').length !== 1) return;
+    if (linkPara.textContent.trim() !== link.textContent.trim()) return;
+
+    const block = buildBlock('cta', {
+      elems: [heading.cloneNode(true), para.cloneNode(true), linkPara.cloneNode(true)],
+    });
+    heading.replaceWith(block);
+    para.remove();
+    linkPara.remove();
+  });
+}
+
+/**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
@@ -93,6 +118,7 @@ function buildAutoBlocks(main) {
     }
     buildWidgetAutoBlocks(main);
     buildQuoteAutoBlocks(main);
+    buildCtaAutoBlocks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);

@@ -1,0 +1,40 @@
+/* Centered closing CTA with a green button that wipes white on hover. */
+.cta.block {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cta.block h2 {
+  margin: 0 0 16px;
+  color: #003b6a;
+  font-family: museo-slab, Calibri, Georgia, Verdana, sans-serif;
+  font-weight: 700;
+}
+
+.cta.block p {
+  margin: 0 auto 24px;
+  max-width: 640px;
+}
+
+/* Green button — white left-to-right wipe grows from an 8px stripe to full
+   width on hover, keeping the label above it. */
+.cta .cta-btn {
+  display: inline-block;
+  padding: 14px 35px;
+  border: 2px solid #aed136;
+  color: #1d4c7e;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #aed136;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 8px 100%;
+  background-image: linear-gradient(#fff, #fff);
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+.cta .cta-btn:hover {
+  background-size: 100% 100%;
+  color: #1d4c7e;
+}
