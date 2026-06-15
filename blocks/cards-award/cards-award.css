@@ -50,6 +50,6 @@
 @media (width >= 900px) {
   .cards-award > ul {
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
