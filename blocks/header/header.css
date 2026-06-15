@@ -41,21 +41,27 @@ header nav .nav-utility {
   background-color: #003b6a;
 }
 
-/* The authored links arrive as separate <p>s inside a default-content-wrapper;
-   lay them out in a single horizontal, right-aligned row. */
+/* The utility bar holds two link groups: a left group (lines of business) and
+   a right group (quick links). Push them to opposite edges like the source. */
 header nav .nav-utility .default-content-wrapper,
 header nav .nav-utility > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
-  justify-content: flex-end;
+  gap: 8px 24px;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-header nav .nav-utility p {
+header nav .nav-utility ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 header nav .nav-utility a {
