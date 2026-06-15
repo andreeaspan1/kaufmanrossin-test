@@ -173,6 +173,7 @@ header nav .nav-sections > ul > li > a {
   padding: 12px 0;
   font-size: 16px;
   font-weight: 500;
+  color: #003b6a;
 }
 
 header nav .nav-drop-toggle {
@@ -224,6 +225,54 @@ header nav .nav-sections a:hover {
   text-decoration: underline;
 }
 
+/* Search box — text input with a magnifier submit button. */
+header nav .nav-search {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+header nav .nav-search input {
+  flex: 1;
+  border: 0;
+  padding: 6px 4px;
+  font-size: 14px;
+  background: transparent;
+  color: #003b6a;
+}
+
+header nav .nav-search input:focus {
+  outline: none;
+}
+
+header nav .nav-search button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px;
+}
+
+header nav .nav-search-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #003b6a;
+  border-radius: 50%;
+  position: relative;
+}
+
+header nav .nav-search-icon::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  bottom: -4px;
+  width: 8px;
+  height: 2px;
+  background: #003b6a;
+  transform: rotate(45deg);
+}
+
 @media (width >= 900px) {
   header nav {
     grid-template-areas:
@@ -244,7 +293,9 @@ header nav .nav-sections a:hover {
   }
 
   header nav .nav-sections {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 24px;
     justify-self: end;
   }
 
@@ -252,6 +303,11 @@ header nav .nav-sections a:hover {
     display: flex;
     gap: 24px;
     align-items: center;
+  }
+
+  header nav .nav-search {
+    margin-top: 0;
+    width: 160px;
   }
 
   header nav .nav-sections > ul > li {

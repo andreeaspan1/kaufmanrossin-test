@@ -101,6 +101,18 @@ export default async function decorate(block) {
     </button>`;
   hamburger.addEventListener('click', () => toggleDrawer(nav));
 
+  // Search form (input + magnifier), submits to the site search results page.
+  const search = document.createElement('form');
+  search.className = 'nav-search';
+  search.setAttribute('role', 'search');
+  search.action = '/search/';
+  search.method = 'get';
+  search.innerHTML = `<input type="search" name="s" aria-label="Search for:" placeholder="Search">
+      <button type="submit" aria-label="Search">
+        <span class="nav-search-icon"></span>
+      </button>`;
+  if (sections) sections.append(search);
+
   // Place the hamburger inside the brand bar so logo + toggle share a row.
   if (brand) brand.append(hamburger);
   else nav.prepend(hamburger);
