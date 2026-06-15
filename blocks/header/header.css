@@ -65,7 +65,7 @@ header nav .nav-utility ul {
 }
 
 header nav .nav-utility a {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
 }
@@ -81,6 +81,7 @@ header nav .nav-utility a:hover {
 header nav .nav-utility ul:first-child a {
   display: inline-block;
   padding: 6px 10px;
+  font-size: 16px;
   color: #fff;
   background-repeat: no-repeat;
   background-position: left center;
