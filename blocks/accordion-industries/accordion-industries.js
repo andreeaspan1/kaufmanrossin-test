@@ -55,6 +55,12 @@ export default function decorate(block) {
 
     body.className = 'accordion-industries-item-body';
 
+    // Style the standalone CTA link as a navy green-wipe button (source btn-kr).
+    const cta = [...body.querySelectorAll('p > a')].find(
+      (a) => a.parentElement.textContent.trim() === a.textContent.trim(),
+    );
+    if (cta) cta.classList.add('accordion-industries-btn');
+
     item.append(header, body);
     if (i === 0) item.classList.add('is-active');
     list.append(item);

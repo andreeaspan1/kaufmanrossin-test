@@ -2,7 +2,7 @@
   color: #1d4c7e;
   font-size: 40px;
   font-weight: 700;
-  margin: 60px 0 48px;
+  margin: 80px 0 48px;
 }
 
 /* Two-column layout: accordion list (left) + fixed image panel (right). */
@@ -106,14 +106,29 @@
   margin: 0 0 12px;
 }
 
-.accordion-industries-item-body a {
-  color: #007bff;
+/* CTA link styled as the source btn-kr: navy button with a green left-to-right
+   wipe that grows from an 8px stripe to full width on hover. */
+.accordion-industries-item-body a.accordion-industries-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 10px 30px;
+  border: 1px solid #bdbdbd;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
   text-decoration: none;
-  font-weight: 600;
+  background-color: #1d4c7e;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 8px 100%;
+  background-image: linear-gradient(#aed136, #aed136);
+  transition: background-size 0.3s ease, color 0.3s ease;
 }
 
-.accordion-industries-item-body a:hover {
-  text-decoration: underline;
+.accordion-industries-item-body a.accordion-industries-btn:hover {
+  background-size: 100% 100%;
+  color: #1d4c7e;
+  text-decoration: none;
 }
 
 @media (width <= 900px) {
