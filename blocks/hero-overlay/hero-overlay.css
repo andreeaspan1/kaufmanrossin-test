@@ -45,6 +45,12 @@
   line-height: 1.1;
 }
 
+/* Narrow the lede paragraph so it wraps like the source ("different" begins
+   line two). The button row (last <p>) keeps the full width. */
+.hero-overlay p:not(:last-of-type) {
+  max-width: 1000px;
+}
+
 @media (width >= 900px) {
   .hero-overlay h1 {
     font-size: 60px;
