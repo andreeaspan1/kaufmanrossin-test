@@ -101,12 +101,12 @@
     padding: 40px max(48px, calc(50vw - 600px + 48px));
   }
 
-  /* Image column fills its half edge-to-edge, top to bottom, and always sits
-     on the left to match the original (text on the right). */
+  /* Image column fills its half edge-to-edge, top to bottom. Column order
+     follows the authored DOM so the two sections alternate (image right, then
+     image left) exactly like the original. */
   .columns-feature > div > .columns-feature-img-col {
     display: flex;
     padding: 0;
-    order: -1;
   }
 
   .columns-feature > div > .columns-feature-img-col picture {
