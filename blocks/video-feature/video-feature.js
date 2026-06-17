@@ -7,7 +7,11 @@
  * is used as the heading; the description is fixed copy for this banner.
  */
 
-const DESCRIPTION = 'See how our independent model benefits our clients by delivering stability, value and innovation year after year.';
+// Two lines with a hard break before "and innovation", matching the source.
+const DESCRIPTION_LINES = [
+  'See how our independent model benefits our clients by delivering stability, value',
+  'and innovation year after year.',
+];
 
 function embedVimeo(videoId, hash) {
   const params = new URLSearchParams({ autoplay: '1' });
@@ -54,7 +58,11 @@ export default async function decorate(block) {
   const h = document.createElement('h2');
   h.textContent = headingText;
   const desc = document.createElement('p');
-  desc.textContent = DESCRIPTION;
+  desc.append(
+    document.createTextNode(DESCRIPTION_LINES[0]),
+    document.createElement('br'),
+    document.createTextNode(DESCRIPTION_LINES[1]),
+  );
   content.append(h, desc);
 
   // Play button.
