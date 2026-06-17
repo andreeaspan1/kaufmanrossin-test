@@ -1,10 +1,14 @@
-/* Video banner: navy heading card on top (over white space), image below it. */
+/* Video banner: navy heading card on top (over white space), image below it.
+   Break out of the section container so the banner runs edge-to-edge. */
 .video-feature {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 60px;
+  margin-top: 100px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 /* Navy heading box, centered at the top on white background. */
