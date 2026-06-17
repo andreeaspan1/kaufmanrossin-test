@@ -10,8 +10,10 @@
   width: 100vw;
 }
 
+/* Inner content sits in a centered ~730px column with left-aligned text,
+   matching the original testimonial band. */
 .quote.block > * {
-  max-width: 1140px;
+  max-width: 730px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 24px;

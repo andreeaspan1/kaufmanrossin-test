@@ -70,12 +70,13 @@
 }
 
 @media (width >= 900px) {
-  /* Full-bleed: each column fills half the viewport and the image covers its
-     full half, matching the original. */
+  /* Centered container capped at 1440px (like the original), so on wide
+     screens the images stop at the container edge with a margin, not the
+     viewport edge. Each column fills half and the image covers its full half. */
   .columns-feature {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .columns-feature > div {
@@ -93,12 +94,12 @@
     order: unset;
   }
 
-  /* Text column: re-introduce inner padding now that the block is edge-to-edge. */
+  /* Text column inner padding. */
   .columns-feature > div > div:not(.columns-feature-img-col) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px max(48px, calc(50vw - 600px + 48px));
+    padding: 40px 72px;
   }
 
   /* Image column fills its half edge-to-edge, top to bottom. Column order
