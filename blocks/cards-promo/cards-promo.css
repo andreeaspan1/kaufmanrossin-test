@@ -75,11 +75,21 @@
   padding: 20px 25px;
 }
 
-/* Family cards: navy title bar near the top with centered text, inset 30px
-   from the card edges (it does not reach the image edges), matching the
-   original. The tile stays clipped so the hover reveal still works. */
+/* Family cards: the image starts ~40px below the card top, leaving white space
+   above it. The card background is transparent so that gap shows through. */
+.cards-promo.cards-promo-family > ul > li {
+  background-color: transparent;
+}
+
+.cards-promo.cards-promo-family .cards-promo-card-image {
+  top: 40px;
+}
+
+/* Navy title bar anchored to the very top of the card with centered text,
+   inset 30px left/right. Its top portion overhangs the white space above the
+   image; its lower portion overlaps the image — matching the original. */
 .cards-promo.cards-promo-family .cards-promo-card-body h3 {
-  top: 30px;
+  top: 0;
   left: 30px;
   right: 30px;
   width: auto;
