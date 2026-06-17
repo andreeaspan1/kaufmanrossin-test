@@ -75,6 +75,18 @@
   padding: 20px 25px;
 }
 
+/* Family cards: full-width navy title bar across the top of the image with
+   centered text, matching the original. The tile stays clipped so the hover
+   reveal still works. */
+.cards-promo.cards-promo-family .cards-promo-card-body h3 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 /* Description + CTA wrapper — hidden below the fold, slides up as one unit. */
 .cards-promo .cards-promo-card-reveal {
   background-color: rgb(0 0 0 / 75%);
