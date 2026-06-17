@@ -179,50 +179,53 @@ header nav .nav-sections {
 }
 
 header nav[aria-expanded='true'] .nav-sections {
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding-bottom: 12px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-sections > ul > li {
-  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #e6e6e6;
   position: relative;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-sections > ul > li > a {
   display: block;
-  padding: 12px 0;
-  font-size: 16px;
+  padding: 18px 4px;
+  font-size: 19px;
   font-weight: 500;
-  color: #000;
+  color: #003b6a;
 }
 
 header nav .nav-drop-toggle {
   position: absolute;
-  top: 6px;
+  top: 0;
+  bottom: 0;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: auto;
   border: 0;
   background: transparent;
   cursor: pointer;
 }
 
+/* Right-pointing chevron (›), matching the source mobile menu. */
 header nav .nav-drop-toggle::after {
   content: '';
   display: block;
-  width: 9px;
-  height: 9px;
+  width: 11px;
+  height: 11px;
   margin: 0 auto;
   border-right: 2px solid #003b6a;
   border-bottom: 2px solid #003b6a;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   transition: transform 0.2s ease;
 }
 
 header nav .nav-drop[aria-expanded='true'] .nav-drop-toggle::after {
-  transform: rotate(-135deg);
+  transform: rotate(45deg);
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -248,19 +251,23 @@ header nav .nav-sections a:hover {
   text-decoration: underline;
 }
 
-/* Search box — text input with a magnifier submit button. */
+/* Search box — rounded pill at the top of the mobile drawer, matching the
+   source. The magnifier submit button sits at the right. */
 header nav .nav-search {
+  order: -1;
   display: flex;
   align-items: center;
-  margin-top: 12px;
-  border-bottom: 1px solid #bdbdbd;
+  margin: 4px 0 16px;
+  padding: 4px 8px 4px 16px;
+  background: #f2f2f2;
+  border-radius: 24px;
 }
 
 header nav .nav-search input {
   flex: 1;
   border: 0;
-  padding: 6px 4px;
-  font-size: 14px;
+  padding: 8px 4px;
+  font-size: 15px;
   background: transparent;
   color: #003b6a;
 }
@@ -335,11 +342,21 @@ header nav .nav-search-icon::after {
     justify-content: flex-end;
   }
 
-  /* Search sits above the menu (above Contact Us), right-aligned. */
+  /* Search sits above the menu (above Contact Us), right-aligned. Revert the
+     mobile pill back to the slim underlined input. */
   header nav .nav-search {
     order: -1;
-    margin-top: 0;
     width: 160px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  header nav .nav-search input {
+    padding: 6px 4px;
+    font-size: 14px;
   }
 
   header nav .nav-sections > ul > li {
@@ -368,6 +385,11 @@ header nav .nav-search-icon::after {
   header nav .nav-drop-toggle::after {
     width: 6px;
     height: 6px;
+    transform: rotate(45deg);
+  }
+
+  header nav .nav-drop[aria-expanded='true'] .nav-drop-toggle::after {
+    transform: rotate(-135deg);
   }
 
   header nav .nav-sections > ul > li > ul {
