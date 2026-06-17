@@ -1,7 +1,21 @@
-/* Centered closing CTA with a green button that wipes white on hover. */
+/* Centered closing CTA with a green button that wipes white on hover. Sits on
+   a full-bleed light-grey band, matching the original. */
 .cta.block {
   text-align: center;
-  padding: 40px 0;
+  padding: 80px 0;
+  background-color: #f5f5f5;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Re-center the inner content within the full-bleed band. */
+.cta.block > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .cta.block h2 {

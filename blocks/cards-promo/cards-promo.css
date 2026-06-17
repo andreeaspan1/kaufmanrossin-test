@@ -75,13 +75,14 @@
   padding: 20px 25px;
 }
 
-/* Family cards: full-width navy title bar across the top of the image with
-   centered text, matching the original. The tile stays clipped so the hover
-   reveal still works. */
+/* Family cards: navy title bar near the top with centered text, inset 30px
+   from the card edges (it does not reach the image edges), matching the
+   original. The tile stays clipped so the hover reveal still works. */
 .cards-promo.cards-promo-family .cards-promo-card-body h3 {
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  width: auto;
   max-width: none;
   box-sizing: border-box;
   text-align: center;
@@ -119,6 +120,13 @@
 .cards-promo > ul > li:hover .cards-promo-card-reveal,
 .cards-promo > ul > li:focus-within .cards-promo-card-reveal {
   transform: translateY(0);
+}
+
+/* Locations instance: extra white space above the section, matching the
+   original spacing. The title is a sibling rendered before the block, so the
+   space goes on the title. */
+.cards-promo-wrapper:has(.cards-promo-locations) .cards-promo-title {
+  margin-top: 100px;
 }
 
 /* Locations instance: small square cards in a single centered row, with the
