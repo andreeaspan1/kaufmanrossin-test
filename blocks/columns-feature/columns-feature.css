@@ -26,6 +26,13 @@
 /* CTA buttons — match the source btn-kr green left-to-right wipe. The wipe is
    an inset gradient that grows from an 8px stripe to full width on hover,
    keeping the label above it. */
+
+/* Keep consecutive button paragraphs on one line. */
+.columns-feature p:has(.columns-feature-btn) {
+  display: inline-block;
+  margin-right: 8px;
+}
+
 .columns-feature .columns-feature-btn {
   display: inline-block;
   margin-top: 8px;

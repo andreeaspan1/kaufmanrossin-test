@@ -1,36 +1,23 @@
-/* Full-bleed video banner with navy heading box on top + centered play. */
+/* Video banner: navy heading card on top (over white space), image below it. */
 .video-feature {
   position: relative;
-  min-height: 460px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  overflow: hidden;
 }
 
-/* Background image layer. */
-.video-feature .video-feature-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-}
-
-.video-feature .video-feature-bg picture,
-.video-feature .video-feature-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Navy heading box, near the top, overlapping the image. */
+/* Navy heading box, centered at the top on white background. */
 .video-feature .video-feature-content {
+  position: relative;
+  z-index: 2;
   background-color: #003b6a;
   color: #fff;
   text-align: center;
-  max-width: 640px;
-  margin: 24px 24px 0;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 24px;
   padding: 40px 48px;
+  box-sizing: border-box;
 }
 
 .video-feature .video-feature-content h2 {
@@ -46,14 +33,32 @@
   line-height: 1.5;
 }
 
-/* Circular play button, centered over the lower part of the image. */
+/* Background image row, below the card. It is pulled up so the card's lower
+   portion overlaps it, matching the original banner. */
+.video-feature .video-feature-bg {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  margin-top: -76px;
+}
+
+.video-feature .video-feature-bg picture,
+.video-feature .video-feature-bg img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Circular play button, centered over the image. */
 .video-feature .video-feature-play {
   position: absolute;
-  bottom: 90px;
+  top: calc(50% + 38px);
   left: 50%;
-  transform: translateX(-50%);
-  width: 64px;
-  height: 64px;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 2px solid #fff;
   background-color: rgb(0 59 106 / 70%);
@@ -67,22 +72,21 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: calc(50% + 3px);
+  left: calc(50% + 4px);
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  border-left: 18px solid #fff;
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 21px solid #fff;
 }
 
 .video-feature .video-feature-play:hover {
   background-color: rgb(0 59 106 / 90%);
-  transform: translateX(-50%) scale(1.08);
+  transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* When playing: the Vimeo iframe fills the banner. */
-.video-feature.is-playing .video-feature-content,
+/* When playing: the Vimeo iframe fills the image area. */
 .video-feature.is-playing .video-feature-play {
   display: none;
 }

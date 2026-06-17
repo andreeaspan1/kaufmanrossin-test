@@ -63,12 +63,13 @@ export default async function decorate(block) {
   play.className = 'video-feature-play';
   play.setAttribute('aria-label', 'Play Video');
 
-  block.append(bg, content, play);
+  block.append(content, bg);
+  bg.append(play);
 
   if (video) {
     play.addEventListener('click', () => {
       block.classList.add('is-playing');
-      block.append(embedVimeo(video.id, video.hash));
+      bg.append(embedVimeo(video.id, video.hash));
     });
   } else {
     play.hidden = true;
