@@ -17,20 +17,20 @@
   border-top: 1px solid #dadada;
 }
 
-/* Right image panel — fixed landscape area; images stack here, only active
-   shows. Sized to a landscape rectangle (~1.83:1) like the source, not full
-   column height. */
+/* Right image panel — image holders are stacked in one grid cell so only the
+   active one shows; the panel auto-sizes to the tallest holder (image + CTA). */
 .accordion-industries-panel {
-  position: relative;
+  display: grid;
   flex: 1 1 55%;
-  aspect-ratio: 605 / 330;
   align-self: start;
   margin-top: 16px;
 }
 
 .accordion-industries-image {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -41,10 +41,11 @@
   pointer-events: auto;
 }
 
+/* Image area keeps the source landscape ratio; CTA sits below it. */
 .accordion-industries-image picture,
 .accordion-industries-image img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 605 / 330;
   object-fit: cover;
 }
 
@@ -65,7 +66,7 @@
   cursor: pointer;
   text-align: left;
   font-family: museo-sans, Calibri, Georgia, Verdana, sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   color: #1d4c7e;
 }
@@ -107,13 +108,10 @@
 }
 
 /* CTA link styled as the source btn-kr: navy button with a green left-to-right
-   wipe that grows from an 8px stripe to full width on hover. Overlaid on the
-   bottom-left of the active image in the right panel. */
+   wipe that grows from an 8px stripe to full width on hover. Sits below the
+   image with a gap, like the source. */
 .accordion-industries-image a.accordion-industries-btn {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
+  margin-top: 30px;
   display: inline-block;
   padding: 10px 30px;
   border: 1px solid #bdbdbd;
