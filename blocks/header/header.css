@@ -314,10 +314,11 @@ header nav .nav-search-icon {
     padding: 0 48px;
   }
 
-  /* Logo on the far left. */
+  /* Logo on the far left. Extra bottom padding gives the white header more
+     breathing room above the hero, matching the original. */
   header nav .nav-brand {
     grid-area: brand;
-    padding: 16px 0;
+    padding: 24px 0 36px;
     justify-self: start;
   }
 
