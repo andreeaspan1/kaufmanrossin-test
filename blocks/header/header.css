@@ -96,6 +96,12 @@ header nav .nav-utility ul:nth-child(2) li:first-child {
   border-left: 0;
 }
 
+/* Right group (quick links): text turns green on hover. */
+header nav .nav-utility ul:nth-child(2) a:hover {
+  color: #aed136;
+  text-decoration: none;
+}
+
 /* Left group (lines of business): green-fill labels. White text on a navy
    background; on hover (and for the active first link) the fill turns solid
    green with navy text — no wipe animation. */
