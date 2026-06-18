@@ -268,6 +268,7 @@ header nav .nav-search {
 
 header nav .nav-search input {
   flex: 1;
+  min-width: 0;
   border: 0;
   padding: 8px 4px;
   font-size: 16px;
@@ -294,24 +295,12 @@ header nav .nav-search button {
   padding: 6px;
 }
 
+/* Solid magnifier glyph, navy, matching the source Font Awesome icon. */
 header nav .nav-search-icon {
   display: block;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #003b6a;
-  border-radius: 50%;
-  position: relative;
-}
-
-header nav .nav-search-icon::after {
-  content: '';
-  position: absolute;
-  right: -5px;
-  bottom: -4px;
-  width: 8px;
-  height: 2px;
-  background: #003b6a;
-  transform: rotate(45deg);
+  width: 16px;
+  height: 16px;
+  color: #003b6a;
 }
 
 @media (width >= 900px) {
@@ -353,8 +342,8 @@ header nav .nav-search-icon::after {
     justify-content: flex-end;
   }
 
-  /* Search sits above the menu (above Contact Us), right-aligned. Revert the
-     mobile pill back to the slim underlined input. */
+  /* Search sits above the menu (above Contact Us), right-aligned. Slim
+     underlined input with a 2px light-grey baseline, matching the source. */
   header nav .nav-search {
     order: -1;
     width: 130px;
@@ -362,12 +351,16 @@ header nav .nav-search-icon::after {
     padding: 0;
     background: transparent;
     border-radius: 0;
-    border-bottom: 1px solid #bdbdbd;
+    border-bottom: 2px solid #efefef;
   }
 
   header nav .nav-search input {
-    padding: 3px 4px;
+    padding: 1px 2px;
     font-size: 16px;
+  }
+
+  header nav .nav-search button {
+    padding: 1px 6px;
   }
 
   header nav .nav-sections > ul > li {
