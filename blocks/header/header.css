@@ -71,7 +71,7 @@ header nav .nav-utility ul:first-child {
 }
 
 header nav .nav-utility a {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   color: #fff;
 }
@@ -94,26 +94,21 @@ header nav .nav-utility ul:nth-child(2) li:first-child {
   border-left: 0;
 }
 
-/* Left group (lines of business): green-wipe buttons. Default is white text on
-   transparent; on hover a green fill grows left-to-right and the text turns
-   navy. The first link is active (green) by default, matching the source. */
+/* Left group (lines of business): green-fill labels. White text on a navy
+   background; on hover (and for the active first link) the fill turns solid
+   green with navy text — no wipe animation. */
 /* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-utility ul:first-child a {
   display: inline-block;
-  padding: 6px 10px;
-  font-size: 17px;
+  padding: 4px 10px;
+  font-size: 18px;
   color: #fff;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 1px 100%;
-  background-image: linear-gradient(#aed136, #aed136);
-  transition: background-size 0.3s ease, color 0.3s ease;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-utility ul:first-child a:hover,
 header nav .nav-utility ul:first-child li:first-child a {
-  background-size: 100% 100%;
+  background-color: #aed136;
   color: #003b6a;
   text-decoration: none;
 }
