@@ -270,8 +270,8 @@ header nav .nav-search input {
   flex: 1;
   border: 0;
   padding: 8px 4px;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   font-family: museo-sans, Calibri, Georgia, Verdana, sans-serif;
   background: transparent;
   color: #003b6a;
@@ -361,7 +361,7 @@ header nav .nav-search-icon::after {
 
   header nav .nav-search input {
     padding: 6px 4px;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   header nav .nav-sections > ul > li {
