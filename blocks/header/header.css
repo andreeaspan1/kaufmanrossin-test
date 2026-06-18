@@ -325,14 +325,15 @@ header nav .nav-search-icon {
     display: none;
   }
 
-  /* Search stays at the right above the menu; the menu links are centered in
-     the area beside the logo, matching the original. */
+  /* The menu links are centered beside the logo and vertically aligned with it.
+     The search is taken out of flow (top-right) so it doesn't push the menu
+     down, matching the original. */
   header nav .nav-sections {
     grid-area: sections;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
     justify-self: stretch;
   }
 
@@ -346,14 +347,15 @@ header nav .nav-search-icon {
   /* Search sits above the menu (above Contact Us), right-aligned. Slim
      underlined input with a 2px light-grey baseline, matching the source. */
   header nav .nav-search {
-    order: -1;
+    position: absolute;
+    top: -28px;
+    right: 0;
     width: 130px;
-    margin: 16px 0 0;
+    margin: 0;
     padding: 0;
     background: transparent;
     border-radius: 0;
     border-bottom: 2px solid #efefef;
-    align-self: flex-end;
   }
 
   header nav .nav-search input {
