@@ -64,10 +64,12 @@ header nav .nav-utility ul {
   padding: 0;
 }
 
-/* Pull the left group flush to the edge (compensate the active button's
-   left padding so "CPAs and Advisors" aligns with the margin). */
+/* Left group: no column gap so the green fills sit flush against each other,
+   with no navy gaps between them. Pulled flush to the edge (compensating the
+   button's left padding so "CPAs and Advisors" aligns with the margin). */
 header nav .nav-utility ul:first-child {
   margin-left: -10px;
+  column-gap: 0;
 }
 
 header nav .nav-utility a {
