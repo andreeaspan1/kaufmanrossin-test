@@ -343,6 +343,11 @@ header nav .nav-search-icon {
     gap: 24px;
     align-items: center;
     justify-content: center;
+
+    /* Nudge up so the links align with the "KAUFMAN ROSSIN" wordmark (the upper
+       part of the logo) rather than the full logo's vertical center, which sits
+       lower because of the "cpa + advisors" tagline beneath. */
+    margin-top: -19px;
   }
 
   /* Search sits above the menu (above Contact Us), right-aligned. Slim
