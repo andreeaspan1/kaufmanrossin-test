@@ -92,10 +92,10 @@
    title wraps to two lines rather than stretching full width. */
 .cards-promo:not(.cards-promo-locations) .cards-promo-card-body h3 {
   top: 0;
-  left: 30px;
-  right: 30px;
+  left: 0;
+  right: auto;
   width: auto;
-  max-width: none;
+  max-width: 65%;
   box-sizing: border-box;
   text-align: center;
 }
