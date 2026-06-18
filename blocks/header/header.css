@@ -281,6 +281,12 @@ header nav .nav-search input:focus {
   outline: none;
 }
 
+/* Navy placeholder, matching the source (browsers default to grey). */
+header nav .nav-search input::placeholder {
+  color: #003b6a;
+  opacity: 1;
+}
+
 header nav .nav-search button {
   border: 0;
   background: transparent;
@@ -290,9 +296,9 @@ header nav .nav-search button {
 
 header nav .nav-search-icon {
   display: block;
-  width: 12px;
-  height: 12px;
-  border: 1.5px solid #003b6a;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #003b6a;
   border-radius: 50%;
   position: relative;
 }
@@ -300,10 +306,10 @@ header nav .nav-search-icon {
 header nav .nav-search-icon::after {
   content: '';
   position: absolute;
-  right: -4px;
-  bottom: -3px;
-  width: 6px;
-  height: 1.5px;
+  right: -5px;
+  bottom: -4px;
+  width: 8px;
+  height: 2px;
   background: #003b6a;
   transform: rotate(45deg);
 }
