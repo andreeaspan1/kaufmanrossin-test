@@ -325,21 +325,22 @@ header nav .nav-search-icon {
     display: none;
   }
 
-  /* Right group: search stacked above the menu, both pushed to the right. */
+  /* Search stays at the right above the menu; the menu links are centered in
+     the area beside the logo, matching the original. */
   header nav .nav-sections {
     grid-area: sections;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: stretch;
     gap: 16px;
-    justify-self: end;
+    justify-self: stretch;
   }
 
   header nav .nav-sections > ul {
     display: flex;
     gap: 24px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   /* Search sits above the menu (above Contact Us), right-aligned. Slim
@@ -347,11 +348,12 @@ header nav .nav-search-icon {
   header nav .nav-search {
     order: -1;
     width: 130px;
-    margin: 0;
+    margin: 16px 0 0;
     padding: 0;
     background: transparent;
     border-radius: 0;
     border-bottom: 2px solid #efefef;
+    align-self: flex-end;
   }
 
   header nav .nav-search input {
