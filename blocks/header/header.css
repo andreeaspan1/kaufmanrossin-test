@@ -36,7 +36,7 @@ header nav ul {
 /* Utility strip — navy full-bleed bar with white links, matching the source. */
 header nav .nav-utility {
   grid-area: utility;
-  padding: 8px 16px;
+  padding: 2px 16px;
   margin: 0 calc(50% - 50vw);
   background-color: #003b6a;
 }
@@ -71,7 +71,7 @@ header nav .nav-utility ul:first-child {
 }
 
 header nav .nav-utility a {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
 }
@@ -101,7 +101,7 @@ header nav .nav-utility ul:nth-child(2) li:first-child {
 header nav .nav-utility ul:first-child a {
   display: inline-block;
   padding: 6px 10px;
-  font-size: 16px;
+  font-size: 17px;
   color: #fff;
   background-repeat: no-repeat;
   background-position: left center;
