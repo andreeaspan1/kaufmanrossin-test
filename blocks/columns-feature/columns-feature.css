@@ -31,6 +31,13 @@
   }
 }
 
+/* Body copy in the text column is smaller than the global default, matching
+   the original. Excludes the eyebrow/heading and button paragraphs. */
+.columns-feature p:not(:has(.columns-feature-btn)) {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 /* CTA buttons — match the source btn-kr green left-to-right wipe. The wipe is
    an inset gradient that grows from an 8px stripe to full width on hover,
    keeping the label above it. */

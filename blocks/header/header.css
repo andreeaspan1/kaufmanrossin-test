@@ -68,7 +68,7 @@ header nav .nav-utility ul {
    with no navy gaps between them. Pulled flush to the edge (compensating the
    button's left padding so "CPAs and Advisors" aligns with the margin). */
 header nav .nav-utility ul:first-child {
-  margin-left: -10px;
+  margin-left: -25px;
   column-gap: 0;
 }
 
