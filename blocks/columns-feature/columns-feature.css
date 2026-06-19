@@ -128,4 +128,11 @@
     height: 100%;
     object-fit: cover;
   }
+
+  /* When the image is the right-hand column, extend it past the centered
+     container to the right viewport edge so it reaches the floating
+     "Contact Us" button, matching the original. */
+  .columns-feature > div > .columns-feature-img-col:last-child {
+    margin-right: calc(50% - 50vw);
+  }
 }
