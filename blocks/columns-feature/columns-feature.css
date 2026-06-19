@@ -130,9 +130,10 @@
   }
 
   /* When the image is the right-hand column, extend it past the centered
-     container to the right viewport edge so it reaches the floating
-     "Contact Us" button, matching the original. */
+     container toward the right viewport edge, but stop short of the floating
+     "Contact Us" button (≈39px wide) and leave a small white gap, matching the
+     original. */
   .columns-feature > div > .columns-feature-img-col:last-child {
-    margin-right: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw + 52px);
   }
 }
