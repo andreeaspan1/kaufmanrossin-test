@@ -137,10 +137,10 @@
     margin-right: calc(50% - 50vw + 39px);
   }
 
-  /* When the image is the left-hand column, extend it past the centered
-     container to the left viewport edge so it matches the size of the
-     right-hand image, while keeping its position on the left. */
+  /* When the image is the left-hand column, mirror the right-hand image's
+     inset (≈39px) so both images are exactly the same width, while keeping its
+     position on the left. */
   .columns-feature > div > .columns-feature-img-col:first-child {
-    margin-left: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw + 39px);
   }
 }
