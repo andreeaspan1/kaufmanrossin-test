@@ -80,6 +80,7 @@
    card background is transparent so that gap shows through. */
 .cards-promo:not(.cards-promo-locations) > ul > li {
   background-color: transparent;
+  aspect-ratio: 3 / 4;
 }
 
 .cards-promo:not(.cards-promo-locations) .cards-promo-card-image {
