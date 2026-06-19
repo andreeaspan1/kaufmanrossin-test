@@ -86,16 +86,16 @@
   top: 40px;
 }
 
-/* Navy title bar anchored to the very top of the card with centered text,
-   inset 30px left/right. Its top portion overhangs the white space above the
-   image; its lower portion overlaps the image — matching the original. The
-   title wraps to two lines rather than stretching full width. */
+/* Navy title bar centered over the image — both horizontally and vertically —
+   with centered text. The title wraps to two lines rather than stretching full
+   width. */
 .cards-promo:not(.cards-promo-locations) .cards-promo-card-body h3 {
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   right: auto;
-  width: auto;
-  max-width: 65%;
+  transform: translate(-50%, -50%);
+  width: 210px;
+  max-width: calc(100% - 48px);
   box-sizing: border-box;
   text-align: center;
 }
