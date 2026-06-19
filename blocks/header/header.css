@@ -50,8 +50,8 @@ header nav .nav-utility > div {
   gap: 8px 24px;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 
 header nav .nav-utility ul {
@@ -68,7 +68,7 @@ header nav .nav-utility ul {
    with no navy gaps between them. Pulled flush to the edge (compensating the
    button's left padding so "CPAs and Advisors" aligns with the margin). */
 header nav .nav-utility ul:first-child {
-  margin-left: -35px;
+  margin-left: -11px;
   column-gap: 0;
 }
 
