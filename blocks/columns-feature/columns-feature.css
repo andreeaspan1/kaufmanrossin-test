@@ -23,6 +23,14 @@
   display: block;
 }
 
+/* Stacked layout: extend the image to the right viewport edge so it reaches the
+   floating "Contact Us" button, matching the original. */
+@media (width < 900px) {
+  .columns-feature > div > .columns-feature-img-col {
+    margin-right: calc(50% - 50vw);
+  }
+}
+
 /* CTA buttons — match the source btn-kr green left-to-right wipe. The wipe is
    an inset gradient that grows from an 8px stripe to full width on hover,
    keeping the label above it. */
