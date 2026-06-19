@@ -134,6 +134,13 @@
      "Contact Us" button (≈39px wide) and leave a small white gap, matching the
      original. */
   .columns-feature > div > .columns-feature-img-col:last-child {
-    margin-right: calc(50% - 50vw + 52px);
+    margin-right: calc(50% - 50vw + 39px);
+  }
+
+  /* When the image is the left-hand column, extend it past the centered
+     container to the left viewport edge so it matches the size of the
+     right-hand image, while keeping its position on the left. */
+  .columns-feature > div > .columns-feature-img-col:first-child {
+    margin-left: calc(50% - 50vw);
   }
 }
