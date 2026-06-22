@@ -50,8 +50,8 @@ header nav .nav-utility > div {
   gap: 8px 24px;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
 }
 
 header nav .nav-utility ul {
@@ -318,7 +318,7 @@ header nav .nav-search-icon {
      breathing room above the hero, matching the original. */
   header nav .nav-brand {
     grid-area: brand;
-    padding: 40px 0 52px;
+    padding: 46px 0;
     justify-self: start;
   }
 
