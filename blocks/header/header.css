@@ -121,13 +121,13 @@ header nav .nav-utility ul:first-child li:first-child a {
   text-decoration: none;
 }
 
-/* Brand bar — logo left edge aligned under the "CPAs and Advisors" tab text. */
+/* Brand bar */
 header nav .nav-brand {
   grid-area: brand;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0 12px 70px;
+  padding: 12px 0;
 }
 
 header nav .nav-brand p {
