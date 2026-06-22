@@ -61,7 +61,7 @@ footer .footer-column {
 
 footer .footer-column h3 {
   font-family: museo-slab, Calibri, Georgia, Verdana, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
@@ -80,9 +80,9 @@ footer .footer-column li {
 
 footer .footer-column ul a {
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 21px;
+  line-height: 24px;
 }
 
 footer .footer-column ul a:hover {
@@ -91,9 +91,9 @@ footer .footer-column ul a:hover {
 
 /* Subscribe button */
 footer .footer-column p {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
-  line-height: 21px;
+  line-height: 24px;
   margin-bottom: 12px;
 }
 
