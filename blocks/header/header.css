@@ -318,7 +318,7 @@ header nav .nav-search-icon {
      breathing room above the hero, matching the original. */
   header nav .nav-brand {
     grid-area: brand;
-    padding: 24px 0 36px;
+    padding: 40px 0 52px;
     justify-self: start;
   }
 
