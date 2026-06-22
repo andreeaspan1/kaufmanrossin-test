@@ -121,13 +121,13 @@ header nav .nav-utility ul:first-child li:first-child a {
   text-decoration: none;
 }
 
-/* Brand bar */
+/* Brand bar — logo left edge aligned under the "CPAs and Advisors" tab text. */
 header nav .nav-brand {
   grid-area: brand;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 12px 0 12px 70px;
 }
 
 header nav .nav-brand p {
@@ -314,8 +314,8 @@ header nav .nav-search-icon {
     padding: 0 48px;
   }
 
-  /* Logo on the far left. Extra bottom padding gives the white header more
-     breathing room above the hero, matching the original. */
+  /* Logo aligned under the "CPAs and Advisors" tab text, with generous vertical
+     padding for breathing room above the hero, matching the original. */
   header nav .nav-brand {
     grid-area: brand;
     padding: 46px 0;
