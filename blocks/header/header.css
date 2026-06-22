@@ -319,7 +319,7 @@ header nav .nav-search-icon {
   header nav .nav-brand {
     grid-area: brand;
     padding: 46px 0;
-    margin-left: 28px;
+    margin-left: 38px;
     justify-self: start;
   }
 
