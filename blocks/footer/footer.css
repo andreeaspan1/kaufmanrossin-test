@@ -151,9 +151,12 @@ footer .footer-social img {
   object-fit: contain;
 }
 
-/* Legal band — aligned with the logo/social left edge. */
+/* Legal band — aligned with the logo/social left edge. A thin divider above it
+   separates the legal text from the top section, matching the original. */
 footer .footer-legal {
-  margin-top: 60px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgb(255 255 255 / 20%);
 }
 
 footer .footer-legal p {
