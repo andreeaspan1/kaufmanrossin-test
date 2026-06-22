@@ -68,7 +68,7 @@ header nav .nav-utility ul {
    with no navy gaps between them. Pulled flush to the edge (compensating the
    button's left padding so "CPAs and Advisors" aligns with the margin). */
 header nav .nav-utility ul:first-child {
-  margin-left: -22px;
+  margin-left: 22px;
   column-gap: 0;
 }
 
@@ -319,7 +319,6 @@ header nav .nav-search-icon {
   header nav .nav-brand {
     grid-area: brand;
     padding: 46px 0;
-    margin-left: -42px;
     justify-self: start;
   }
 
