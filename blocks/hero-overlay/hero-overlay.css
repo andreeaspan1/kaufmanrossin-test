@@ -135,6 +135,8 @@
     width: 100%;
     box-sizing: border-box;
     text-align: center;
+    padding: 11px 20px;
+    font-size: 14px;
   }
 }
 
