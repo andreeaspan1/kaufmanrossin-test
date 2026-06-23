@@ -92,15 +92,24 @@ header nav .nav-utility ul:nth-child(2) li {
   border-left: 1px solid rgb(255 255 255 / 35%);
 }
 
-/* Hide the "Home" link (first quick link) — the original site omits it. The
-   visible first item (now "Payment Portal") drops its left divider. */
+/* Hide the "Home" link (first quick link) — the original site omits it. */
 header nav .nav-utility ul:nth-child(2) li:first-child {
   display: none;
 }
 
-header nav .nav-utility ul:nth-child(2) li:nth-child(2) {
+/* Reorder the quick links to 888.680.5726 | Español | File Sharing |
+   Payment Portal, matching the original. DOM order is Home(1), Payment
+   Portal(2), File Sharing(3), phone(4), Español(5). */
+header nav .nav-utility ul:nth-child(2) li:nth-child(4) {
+  order: 1;
+
+  /* This item (phone) is now visually first, so drop its left divider. */
   border-left: 0;
 }
+
+header nav .nav-utility ul:nth-child(2) li:nth-child(5) { order: 2; }
+header nav .nav-utility ul:nth-child(2) li:nth-child(3) { order: 3; }
+header nav .nav-utility ul:nth-child(2) li:nth-child(2) { order: 4; }
 
 /* Right group (quick links): text turns green on hover. */
 header nav .nav-utility ul:nth-child(2) a:hover {
