@@ -41,8 +41,12 @@
 .hero-overlay h1 {
   font-family: 'Roboto Slab', museo-slab, Calibri, Georgia, Verdana, sans-serif;
   font-weight: 700;
-  font-size: 3.5rem;
+
+  /* Scale down on narrow phones so the long word "Independence" never overflows
+     the viewport (which caused a horizontal scroll). */
+  font-size: clamp(2rem, 9vw, 3.5rem);
   line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 /* Narrow the lede paragraph so it wraps like the source ("different" begins

@@ -78,6 +78,10 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+
+  /* Full-bleed sections use 100vw, which can exceed the content width by the
+     scrollbar/rounding amount and cause a small horizontal scroll. Clip it. */
+  overflow-x: hidden;
 }
 
 body.appear {
