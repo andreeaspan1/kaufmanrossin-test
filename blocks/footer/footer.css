@@ -250,6 +250,18 @@ footer .footer-contact-tab a:hover {
     gap: 28px 40px;
   }
 
+  footer .footer-column ul a {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* Indent the legal text from the band edges (matching the source mobile
+     footer, which insets the disclaimer block). */
+  footer .footer-legal {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
   footer .footer-social {
     order: 2;
     width: 100%;
