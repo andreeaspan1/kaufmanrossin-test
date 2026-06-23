@@ -221,6 +221,93 @@ footer .footer-contact-tab a:hover {
   text-decoration: none;
 }
 
+/* Tablet/phone: stack the footer into a centered column — logo on top, the two
+   link columns side by side, a full-width Subscribe button, then centered
+   social icons. The floating Contact Us tab becomes a full-width bottom bar. */
+@media (width < 900px) {
+  footer .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* Release the logo and social icons so they can be ordered independently of
+     the link columns. */
+  footer .footer-brand {
+    display: contents;
+  }
+
+  footer .footer-logo {
+    order: 0;
+    text-align: center;
+  }
+
+  footer .footer-columns {
+    order: 1;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px 40px;
+  }
+
+  footer .footer-social {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin: 0;
+  }
+
+  /* Locations + Quick Links share the top row; Subscribe wraps below them. */
+  footer .footer-column:nth-child(1),
+  footer .footer-column:nth-child(2) {
+    flex: 0 1 200px;
+  }
+
+  footer .footer-column:nth-child(3) {
+    flex: 0 0 100%;
+  }
+
+  /* The Subscribe column shows only the full-width button (matching the
+     source mobile footer). */
+  footer .footer-column:nth-child(3) h3,
+  footer .footer-column:nth-child(3) p:not(:last-child) {
+    display: none;
+  }
+
+  footer .footer-column:nth-child(3) p:last-child a {
+    display: block;
+    text-align: center;
+  }
+
+  /* Contact Us: full-width navy bar with a green top rule and an up chevron,
+     replacing the rotated edge tab. */
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  footer .footer-contact-tab a {
+    position: static;
+    transform: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 6px;
+    padding: 16px 25px;
+    border-top: 3px solid #aed136;
+    background-color: #003b6a;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  footer .footer-contact-tab a::before {
+    border-color: #fff;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  footer .footer-contact-tab a:hover {
+    background-color: #00497f;
+  }
+}
+
 @media (width >= 900px) {
   footer .footer-columns {
     flex-wrap: nowrap;
