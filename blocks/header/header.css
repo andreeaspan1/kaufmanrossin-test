@@ -92,7 +92,13 @@ header nav .nav-utility ul:nth-child(2) li {
   border-left: 1px solid rgb(255 255 255 / 35%);
 }
 
+/* Hide the "Home" link (first quick link) — the original site omits it. The
+   visible first item (now "Payment Portal") drops its left divider. */
 header nav .nav-utility ul:nth-child(2) li:first-child {
+  display: none;
+}
+
+header nav .nav-utility ul:nth-child(2) li:nth-child(2) {
   border-left: 0;
 }
 
@@ -329,8 +335,8 @@ header nav .nav-search-icon {
   }
 
   header nav .nav-utility ul:first-child a {
-    padding: 14px 8px;
-    font-size: 13px;
+    padding: 9px 8px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -349,12 +355,12 @@ header nav .nav-search-icon {
   header nav .nav-utility ul:nth-child(2) {
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 8px 16px;
+    padding: 5px 16px;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-utility ul:nth-child(2) a {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
