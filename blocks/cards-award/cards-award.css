@@ -47,6 +47,44 @@
   font-weight: 700;
 }
 
+/* Green vertical divider between award items (not the label, not the last). */
+.cards-award > ul > li:not(:first-child, :last-child)::after {
+  content: '';
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background-color: #aed135;
+}
+
+.cards-award > ul > li:not(:first-child) {
+  position: relative;
+}
+
+/* On phones the green label sits on its own line above the awards row, and the
+   awards shrink so the first three fit on one line (matching the source). */
+@media (width < 900px) {
+  .cards-award > ul {
+    gap: 10px 16px;
+  }
+
+  .cards-award > ul > li {
+    font-size: 13px;
+  }
+
+  .cards-award > ul > li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  .cards-award > ul > li:not(:first-child, :last-child)::after {
+    right: -8px;
+  }
+}
+
 @media (width >= 900px) {
   .cards-award > ul {
     flex-wrap: nowrap;
