@@ -126,6 +126,11 @@
 /* On phones/tablets the two CTAs stack full-width and equal, matching the
    original mobile hero. */
 @media (width < 900px) {
+  .hero-overlay {
+    min-height: 0;
+    padding: 56px 24px 32px;
+  }
+
   .hero-overlay h1 {
     font-size: clamp(1.75rem, 7.5vw, 2.5rem);
   }
