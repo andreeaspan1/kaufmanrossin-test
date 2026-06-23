@@ -303,6 +303,61 @@ header nav .nav-search-icon {
   color: #003b6a;
 }
 
+/* Tablet / phone utility bar: stack the two link groups into full-width rows.
+   The lines-of-business row sits on white with uppercase labels spread across
+   the width; the quick-links row stays on the navy bar below it. */
+@media (width < 900px) {
+  header nav .nav-utility {
+    padding: 0;
+    background-color: #003b6a;
+  }
+
+  header nav .nav-utility .default-content-wrapper,
+  header nav .nav-utility > div {
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  /* Row 1 — lines of business: white background, evenly spread, uppercase. */
+  header nav .nav-utility ul:first-child {
+    margin-left: 0;
+    background-color: #fff;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0 16px;
+  }
+
+  header nav .nav-utility ul:first-child a {
+    padding: 14px 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #003b6a;
+  }
+
+  /* First item keeps the green fill; align it flush to the left edge. */
+  /* stylelint-disable-next-line no-descending-specificity */
+  header nav .nav-utility ul:first-child li:first-child a {
+    margin-left: -16px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Row 2 — quick links: navy bar, left-aligned with thin dividers. */
+  header nav .nav-utility ul:nth-child(2) {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  header nav .nav-utility ul:nth-child(2) a {
+    font-size: 14px;
+  }
+}
+
 @media (width >= 900px) {
   header nav {
     grid-template-areas:
