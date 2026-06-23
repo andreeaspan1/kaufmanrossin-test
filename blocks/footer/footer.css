@@ -184,8 +184,11 @@ footer .footer-contact-tab p {
 /* stylelint-disable-next-line no-descending-specificity */
 footer .footer-contact-tab a {
   position: fixed;
-  top: 50%;
+  top: 38%;
   right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   transform: rotate(-90deg);
   transform-origin: bottom right;
   background-color: #aed136;
@@ -198,6 +201,18 @@ footer .footer-contact-tab a {
   letter-spacing: 0.5px;
   white-space: nowrap;
   z-index: 1000;
+}
+
+/* Arrow before the label — a chevron that points up once the tab is rotated,
+   matching the source. */
+footer .footer-contact-tab a::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #003b6a;
+  border-right: 2px solid #003b6a;
+  transform: rotate(-45deg);
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
