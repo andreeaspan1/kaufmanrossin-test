@@ -83,6 +83,13 @@
   .cards-award > ul > li:not(:first-child, :last-child)::after {
     right: -8px;
   }
+
+  /* Last award ("2026 Best of Accounting Award") drops to its own centered
+     line below the other three, matching the source. */
+  .cards-award > ul > li:last-child {
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
 
 @media (width >= 900px) {
