@@ -134,6 +134,10 @@
 }
 
 @media (width <= 900px) {
+  .accordion-industries-title {
+    margin: 40px 0 20px;
+  }
+
   .accordion-industries-layout {
     flex-direction: column;
   }
