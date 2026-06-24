@@ -356,8 +356,8 @@ header nav .nav-search-icon {
     flex: 1;
     align-items: center;
     justify-content: center;
-    padding: 9px 8px;
-    font-size: 12px;
+    padding: 6px 8px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -375,12 +375,12 @@ header nav .nav-search-icon {
   header nav .nav-utility ul:nth-child(2) {
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 5px 16px;
+    padding: 4px 16px;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-utility ul:nth-child(2) a {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
