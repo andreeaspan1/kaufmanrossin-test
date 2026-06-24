@@ -335,30 +335,35 @@ header nav .nav-search-icon {
     align-items: stretch;
   }
 
-  /* Row 1 — lines of business: white background, evenly spread, uppercase. */
+  /* Row 1 — lines of business: white background, three equal-width cells,
+     uppercase. Each item takes one third of the row. */
   header nav .nav-utility ul:first-child {
     margin-left: 0;
     background-color: #fff;
-    justify-content: space-between;
     flex-wrap: nowrap;
-    padding: 0 16px;
+    padding: 0;
+  }
+
+  header nav .nav-utility ul:first-child li {
+    flex: 1 1 0;
+    min-width: 0;
   }
 
   header nav .nav-utility ul:first-child a {
+    display: block;
     padding: 9px 8px;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    text-align: center;
     color: #003b6a;
   }
 
-  /* First item keeps the green fill; align it flush to the left edge. */
+  /* First item keeps the green fill, spanning its full third. */
   /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-utility ul:first-child li:first-child a {
-    margin-left: -16px;
-    padding-left: 24px;
-    padding-right: 24px;
+    background-color: #aed136;
   }
 
   /* Row 2 — quick links: navy bar, left-aligned with thin dividers. */
