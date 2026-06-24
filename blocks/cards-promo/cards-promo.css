@@ -135,6 +135,16 @@
   transform: translateY(0);
 }
 
+/* On touch viewports there's no hover, so the description + CTA can't be
+   revealed. Show it permanently at the bottom of each promo card (matching the
+   original mobile cards). The locations instance is excluded — it has its own
+   static caption layout. */
+@media (width < 900px) {
+  .cards-promo:not(.cards-promo-locations) .cards-promo-card-reveal {
+    transform: translateY(0);
+  }
+}
+
 /* Locations instance: extra white space above the section, matching the
    original spacing. The title is a sibling rendered before the block, so the
    space goes on the title. */

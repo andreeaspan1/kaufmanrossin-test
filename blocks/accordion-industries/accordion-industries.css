@@ -135,11 +135,12 @@
 
 @media (width <= 900px) {
   .accordion-industries-title {
-    margin: 40px 0 20px;
+    margin: 80px 16px 20px;
   }
 
   .accordion-industries-layout {
     flex-direction: column;
+    padding: 0 16px;
   }
 
   .accordion-industries-panel {

@@ -23,11 +23,19 @@
   display: block;
 }
 
-/* Stacked layout: extend the image to the right viewport edge so it reaches the
-   floating "Contact Us" button, matching the original. */
+/* Stacked layout: extend the image full-bleed to both viewport edges, matching
+   the original. */
 @media (width < 900px) {
   .columns-feature > div > .columns-feature-img-col {
+    margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+  }
+
+  .columns-feature h1,
+  .columns-feature h2,
+  .columns-feature h3 {
+    font-size: 26px;
+    line-height: 1.25;
   }
 }
 
