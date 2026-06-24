@@ -143,7 +143,10 @@
     padding: 0 32px;
   }
 
+  /* Hide the shared image panel on viewports — it stacks below the whole list
+     and shows the active item's image under an unrelated heading, which looks
+     disconnected. The accordion text is enough on small screens. */
   .accordion-industries-panel {
-    width: 100%;
+    display: none;
   }
 }
