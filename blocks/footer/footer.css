@@ -297,9 +297,7 @@ footer .footer-contact-tab a:hover {
   /* stylelint-disable-next-line no-descending-specificity */
   footer .footer-contact-tab a {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: auto 0 0;
     z-index: 1000;
     transform: none;
     flex-direction: column;
