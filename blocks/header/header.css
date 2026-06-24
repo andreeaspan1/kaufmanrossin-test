@@ -356,8 +356,8 @@ header nav .nav-search-icon {
     flex: 1;
     align-items: center;
     justify-content: center;
-    padding: 6px 8px;
-    font-size: 11px;
+    padding: 3px 8px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
