@@ -128,7 +128,7 @@
 @media (width < 900px) {
   .hero-overlay {
     min-height: 0;
-    padding: 56px 24px 32px;
+    padding: 120px 24px 32px;
   }
 
   .hero-overlay h1 {
