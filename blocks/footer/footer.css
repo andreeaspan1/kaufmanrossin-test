@@ -175,6 +175,7 @@ footer .footer-legal a {
    matching the source (green bg, navy text). */
 footer .footer-contact-tab {
   margin: 0;
+  display: none;
 }
 
 footer .footer-contact-tab p {
