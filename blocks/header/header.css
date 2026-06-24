@@ -341,16 +341,21 @@ header nav .nav-search-icon {
     margin-left: 0;
     background-color: #fff;
     flex-wrap: nowrap;
+    align-items: stretch;
     padding: 0;
   }
 
   header nav .nav-utility ul:first-child li {
+    display: flex;
     flex: 1 1 0;
     min-width: 0;
   }
 
   header nav .nav-utility ul:first-child a {
-    display: block;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
     padding: 9px 8px;
     font-size: 12px;
     font-weight: 700;
