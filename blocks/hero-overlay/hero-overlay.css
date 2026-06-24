@@ -141,7 +141,8 @@
   .hero-overlay h5,
   .hero-overlay h6,
   .hero-overlay p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   .hero-overlay p:last-of-type {

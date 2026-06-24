@@ -318,10 +318,11 @@ header nav .nav-search-icon {
   color: #003b6a;
 }
 
-/* Tablet / phone utility bar: stack the two link groups into full-width rows.
-   The lines-of-business row sits on white with uppercase labels spread across
-   the width; the quick-links row stays on the navy bar below it. */
-@media (width < 900px) {
+/* Tablet / small-desktop utility bar: stack the two link groups into full-width
+   rows. The lines-of-business row sits on white with uppercase labels spread
+   across the width; the quick-links row stays on the navy bar below it. This
+   covers every width below the point where the bar fits on one line. */
+@media (width < 1200px) {
   header nav .nav-utility {
     padding: 0;
     background-color: #003b6a;
