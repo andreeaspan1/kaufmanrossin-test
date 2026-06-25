@@ -388,10 +388,10 @@ header nav .nav-search-icon {
     padding: 4px 0;
   }
 
-  /* Pull the phone item (visually first) flush against the left edge. */
+  /* Phone item (visually first) sits just inside the left edge. */
   header nav .nav-utility ul:nth-child(2) li:nth-child(4) {
     padding-left: 0;
-    margin-left: -16px;
+    margin-left: -8px;
     padding-right: 14px;
   }
 
