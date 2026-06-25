@@ -390,6 +390,12 @@ header nav .nav-search-icon {
     margin-left: -16px;
     padding-right: 14px;
   }
+
+  /* Brighter white dividers between the quick links. */
+  /* stylelint-disable-next-line no-descending-specificity */
+  header nav .nav-utility ul:nth-child(2) li {
+    border-left: 1px solid rgb(255 255 255 / 70%);
+  }
 }
 
 @media (width >= 900px) {
