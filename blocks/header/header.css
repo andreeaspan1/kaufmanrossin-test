@@ -323,6 +323,13 @@ header nav .nav-search-icon {
    across the width; the quick-links row stays on the navy bar below it. This
    covers every width below the point where the bar fits on one line. */
 @media (width < 1200px) {
+  /* The logo PNG carries more built-in whitespace below the wordmark than
+     above, so center alignment looks top-heavy. Add extra top padding to
+     visually balance the gaps above and below the logo. */
+  header nav .nav-brand {
+    padding: 22px 0 12px;
+  }
+
   header nav .nav-utility {
     padding: 0;
     background-color: #003b6a;
