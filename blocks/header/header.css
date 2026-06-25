@@ -371,16 +371,24 @@ header nav .nav-search-icon {
     background-color: #aed136;
   }
 
-  /* Row 2 — quick links: navy bar, left-aligned with thin dividers. */
+  /* Row 2 — quick links: navy bar, left-aligned with thin dividers. The first
+     visual item (the phone number) sits flush to the left edge. */
   header nav .nav-utility ul:nth-child(2) {
     justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 4px 16px;
+    padding: 2px 16px;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-utility ul:nth-child(2) a {
-    font-size: 12px;
+    font-size: 14px;
+  }
+
+  /* Pull the phone item (visually first) flush against the left edge. */
+  header nav .nav-utility ul:nth-child(2) li:nth-child(4) {
+    padding-left: 0;
+    margin-left: -16px;
+    padding-right: 14px;
   }
 }
 
