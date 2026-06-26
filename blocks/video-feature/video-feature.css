@@ -107,3 +107,21 @@
   height: 100%;
   border: 0;
 }
+
+/* Viewports: smaller navy card with side white space, tighter padding, and
+   smaller heading/body text. */
+@media (width < 900px) {
+  .video-feature .video-feature-content {
+    margin: 0 24px;
+    padding: 24px;
+  }
+
+  .video-feature .video-feature-content h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .video-feature .video-feature-content p {
+    font-size: 14px;
+  }
+}
