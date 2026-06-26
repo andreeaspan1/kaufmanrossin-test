@@ -151,10 +151,13 @@
     background-color: #003b6a;
   }
 
-  /* On viewports the cards stack one-per-row and stretch to the full content
-     width (matching the source), rather than capping at the desktop tile size. */
+  /* On viewports the cards stack one-per-row and stretch to fill the content
+     column (with a comfortable side margin), rather than capping at the desktop
+     tile size. */
   .cards-promo:not(.cards-promo-locations) > ul {
     grid-template-columns: 1fr;
+    padding: 0 24px;
+    box-sizing: border-box;
   }
 }
 
