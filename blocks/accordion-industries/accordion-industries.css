@@ -136,13 +136,18 @@
 @media (width <= 900px) {
   .accordion-industries-title {
     margin: 80px 32px 20px;
-    font-size: 28px;
+    font-size: 34px;
   }
 
   .accordion-industries-item-label {
     font-size: 19px;
     padding-top: 12px;
     padding-bottom: 12px;
+  }
+
+  .accordion-industries-item-body p {
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .accordion-industries-layout {
