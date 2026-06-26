@@ -150,6 +150,12 @@
        wash over the image. */
     background-color: #003b6a;
   }
+
+  /* On viewports the cards stack one-per-row and stretch to the full content
+     width (matching the source), rather than capping at the desktop tile size. */
+  .cards-promo:not(.cards-promo-locations) > ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Locations instance: extra white space above the section, matching the
