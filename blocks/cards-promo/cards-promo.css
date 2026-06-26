@@ -145,6 +145,10 @@
 @media (width < 900px) {
   .cards-promo:not(.cards-promo-locations) .cards-promo-card-reveal {
     transform: translateY(0);
+
+    /* Solid navy panel (matching the source mobile cards), not a translucent
+       wash over the image. */
+    background-color: #003b6a;
   }
 }
 
