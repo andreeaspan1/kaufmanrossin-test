@@ -123,13 +123,18 @@
 }
 
 .cards-promo .cards-promo-card-reveal a {
-  color: #aed136;
+  display: inline-block;
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid #aed136;
+  padding-bottom: 6px;
 }
 
 .cards-promo .cards-promo-card-reveal a:hover {
-  text-decoration: underline;
+  color: #aed136;
 }
 
 /* Reveal the description + CTA on hover/focus. */
@@ -158,6 +163,16 @@
     grid-template-columns: 1fr;
     padding: 0 24px;
     box-sizing: border-box;
+  }
+
+  /* Widen the navy title bar so it spans most of the (now wider) card, matching
+     the source. */
+  .cards-promo:not(.cards-promo-locations) .cards-promo-card-body h3 {
+    width: auto;
+    left: 24px;
+    right: 24px;
+    max-width: none;
+    transform: none;
   }
 }
 
