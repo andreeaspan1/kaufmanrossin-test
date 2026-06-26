@@ -174,9 +174,10 @@
   }
 
   /* Shorter cards on viewports — the wide cards would be very tall at the 3/4
-     portrait ratio, so use a landscape ratio instead. */
+     portrait ratio. A square ratio keeps the full subject visible without
+     cropping the top of the head. */
   .cards-promo:not(.cards-promo-locations) > ul > li {
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   /* Widen the navy title bar so it spans most of the (now wider) card, matching
