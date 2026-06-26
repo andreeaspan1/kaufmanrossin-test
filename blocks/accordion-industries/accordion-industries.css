@@ -141,6 +141,8 @@
 
   .accordion-industries-item-label {
     font-size: 19px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .accordion-industries-layout {
