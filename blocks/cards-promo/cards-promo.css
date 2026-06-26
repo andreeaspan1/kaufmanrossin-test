@@ -129,8 +129,16 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 3px solid #aed136;
-  padding-bottom: 6px;
+}
+
+/* Short green accent line below the start of the link, matching the source. */
+.cards-promo .cards-promo-card-reveal a::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin-top: 6px;
+  background-color: #aed136;
 }
 
 .cards-promo .cards-promo-card-reveal a:hover {
