@@ -384,13 +384,13 @@ header nav .nav-search-icon {
     justify-content: flex-start;
     flex-wrap: wrap;
     padding: 0 16px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
   }
 
   /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-utility ul:nth-child(2) a {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.4;
     padding: 4px 0;
   }
