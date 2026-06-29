@@ -174,9 +174,9 @@ header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
   display: block;
   position: relative;
-  width: 24px;
-  height: 2px;
-  background: #003b6a;
+  width: 30px;
+  height: 3px;
+  background: #aed136;
   margin: 0 auto;
 }
 
@@ -187,8 +187,8 @@ header nav .nav-hamburger-icon::after {
   left: 0;
 }
 
-header nav .nav-hamburger-icon::before { top: -7px; }
-header nav .nav-hamburger-icon::after { top: 7px; }
+header nav .nav-hamburger-icon::before { top: -8px; }
+header nav .nav-hamburger-icon::after { top: 8px; }
 
 /* Main menu — mobile drawer (default) */
 header nav .nav-sections {
@@ -364,7 +364,7 @@ header nav .nav-search-icon {
     align-items: center;
     justify-content: center;
     padding: 3px 8px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
