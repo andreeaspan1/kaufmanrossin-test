@@ -160,8 +160,10 @@
     transform: translateY(0);
 
     /* Solid navy panel (matching the source mobile cards), not a translucent
-       wash over the image. */
+       wash over the image. Extra top padding lifts the panel up to ~the
+       subject's chin, like the source. */
     background-color: #003b6a;
+    padding-top: 60px;
   }
 
   /* On viewports the cards stack one-per-row and stretch to fill the content
